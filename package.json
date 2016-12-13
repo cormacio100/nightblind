@@ -1,0 +1,23 @@
+{
+  "name": "nightblind",
+  "version": "1.0.0",
+  "description": "Band Website for Dublin Rock Band Night Blind",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "Night",
+    "Blind",
+    "Rock",
+    "Band",
+    "Dublin",
+    "Original",
+    "Hard",
+    "Rock",
+    "Ireland",
+    "Irish"
+  ],
+  "author": "Cormac Liston",
+  "license": "ISC"
+}

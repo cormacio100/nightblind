@@ -1,0 +1,35 @@
+{
+  "name": "nightblind",
+  "description": "Band Website for Dublin Rock Band Night Blind",
+  "main": "index.js",
+  "authors": [
+    "Cormac Liston"
+  ],
+  "license": "ISC",
+  "keywords": [
+    "Night",
+    "Blind",
+    "Rock",
+    "Band",
+    "Dublin",
+    "Original",
+    "Hard",
+    "Rock",
+    "Ireland",
+    "Irish"
+  ],
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "bootstrap": "^3.3.7",
+    "angular": "^1.5.9",
+    "angular-route": "^1.5.9",
+    "a0-angular-storage": "^0.0.15"
+  }
+}
