@@ -1,0 +1,289 @@
+/*******************/
+/* OVERALL THEME   */
+/*******************/
+
+*{
+	box-sizing: border-box;
+}
+
+.btn, .navbar-default, .navbar-default .navbar-header .navbar-brand, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Permanent Marker','Open Sans','Helvetica Neue',Arial,sans-serif;
+}
+
+h2{
+	text-shadow: 2px 2px #F10000;
+}
+
+.fa-angle-double-up{
+	color:white;
+}
+
+body,
+html{
+	height:100%;
+	width:100%;
+	font-size:0;
+	color:#aaa;
+}
+body{
+	background-color:#aaa;
+	font-family:'Permanent Marker','Helvetica Neue',Arial,sans-serif;
+	
+}
+
+#about,
+#gallery{
+	background-image:url(../img/westland/room/bg-noise.png);
+	font-size:14px;
+}
+
+section{
+	padding:100px 0;
+}
+
+section h2{
+	text-align: center;
+}
+
+/**********************/
+/* NAVIGATION STYLING */
+/**********************/
+nav{
+	font-size:14px;
+}
+
+.navbar-toggle{
+	border:1px solid white;
+	color:#fff;
+}
+.navbar-fixed-top{
+	background-color: #000;
+}
+.container-fluid{
+	padding: 0 5% 0 5%;
+}
+.navbar-toggle:hover{
+	color:#f10000;
+}
+a.navbar-brand{
+	color: #f10000;
+}
+a.navbar-brand:hover{
+	color:white;
+
+}
+#myCollapsingList li a{
+	color:#f10000;
+}
+#myCollapsingList li.active a{
+	color:white;
+	xbackground-image:url(../img/westland/room/bg-noise.png);
+	xbackground-color:#f10000;
+}
+#myCollapsingList li a:hover{
+	xbackground-color: #f10000;
+	xbackground-image:url(../img/westland/room/bg-noise.png);
+	color:white;
+}
+
+/******************/
+/* HEADER STYLING */
+/******************/
+header{
+	background-image:url(../img/westland/room/Ejector-Seat-216b.jpg);
+	position:relative;
+	width:100%;
+	text-align:center;
+	color:white;
+	background-color:white;
+	background-size: cover;
+	background-position:center;
+	min-height:100%;
+	font-size:14px;
+	padding-top:50px;
+}
+.header-content-inner{
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
+header p{
+	font-size:1.2em;
+	opacity:0.7;
+	text-align:center;
+	padding:10px;
+}
+#homeHeading{
+	color: #f10000;
+	font-size:5em;
+}
+.btn-primary{
+	
+	border:2px solid #ffffff;
+	background-color:#f10000;
+	border:0;
+	border-radius:15px;
+	padding:15px;
+	opacity:0.8;
+}
+.btn-primary:hover{
+	background-color:white;
+	color:#f10000;
+	border:2px solid #f10000;
+}
+h1{
+	font-size:4em;
+}
+
+a{
+	transition: all .35s;
+}
+
+hr{
+	background-color:#f10000;
+	height:3px;
+	border:0;
+	width:7%;
+}
+
+
+header p{
+	margin: 20px;
+}
+
+
+
+/*******************/
+/* MEMBERS SECTION */
+/*******************/
+#members{
+	xbackground-color: #fff;
+	background-image:url(../img/westland/room/Ejector-Seat-127d.jpg);
+	position:relative;
+	width:100%;
+	text-align:center;
+	color:white;
+	background-color:white;
+	background-size: cover;
+	background-position:center;
+	min-height:100%;
+	font-size:14px;
+}
+#members a{
+	color:#f10000;
+}
+#members a:hover{
+	xcolor:#aaa;
+	text-decoration:none;
+}
+
+#members h2{
+	xcolor:#aaa;
+}
+
+
+.thumb{
+	xbackground-color:grey;
+	background-image:url(../img/westland/room/bg-noise.png);
+	opacity:0.9;
+	border-radius: 25px;
+	padding:1em;
+}
+
+.thumb:hover{
+	opacity:1;
+	color:#aaa;
+}
+
+#members .fa-caret-square-o-down:hover,
+#members .fa-caret-square-o-left:hover,
+#members .fa-caret-square-o-up:hover,
+#members .fa-caret-square-o-right:hover{
+	transform:rotate(90deg);
+}
+
+#members #cormac,
+#members #hugh,
+#members #davy,
+#members #freek{
+	padding:1em;
+	margin-top:1em;
+	background-image:url(../img/westland/room/bg-noise.png);
+	color:white;
+	opacity:0.9;
+	border:1px solid #f10000;
+	border-radius:25px;
+}
+
+.fa-4x{
+	color:#f10000;
+}
+.fa-4x:hover{
+	xcolor:#aaa;
+}
+.service-box h3{
+	opacity:0.8;
+}
+.text-muted{
+	opacity: 0.8;
+}
+
+/******************/
+/* GALLERY SECTION*/
+/******************/
+#gallery{
+	color:white;
+}
+
+/*****************/
+/* MUSIC SECTION */
+/*****************/
+#music{
+	background-color:#fff;
+	font-size:14px;
+}
+
+.music-section{
+	color:#aaa;
+}
+
+/*****************/
+/* VIDEO SECTION */
+/*****************/
+#video{
+	background-image:url(../img/westland/room/Ejector-Seat-34.jpg);
+	position:relative;
+	width:100%;
+	text-align:center;
+	color:white;
+	background-color:white;
+	background-size: cover;
+	background-position:center;
+	min-height:100%;
+	font-size:14px;
+}
+
+/*******************/
+/* CONTACT SECTION */
+/*******************/
+#contact{
+	font-size:14px;
+	background-image:url(../img/westland/room/bg-noise.png);
+	color:#FFFFFF;
+}
+#contact hr{
+	background-color:#FFFFFF;
+}
+#contact .fa-3x,
+#contact a{
+	color:#ffffff;
+}
+#contactsRow{
+	margin-top: 3em;
+}
+#contact .sr-contact{
+	color:#FFFFFF;
+}
+.fa{
+	; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; 
+}

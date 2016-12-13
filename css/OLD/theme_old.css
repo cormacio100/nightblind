@@ -1,0 +1,232 @@
+*{
+	box-sizing: border-box;
+}
+
+.btn, .navbar-default, .navbar-default .navbar-header .navbar-brand, h1, h2, h3, h4, h5, h6 {
+    font-family: 'Permanent Marker','Helvetica Neue',Arial,sans-serif;
+}
+
+
+body,
+html{
+	height:100%;
+	width:100%;
+	font-size:0;
+}
+body{
+	background-color:#ccc;
+	xfont-family:Merriweather,'Helvetica Neue',Arial,sans-serif;
+	font-family:'Permanent Marker','Helvetica Neue',Arial,sans-serif;
+}
+
+/* NAVIGATION STYLING */
+nav{
+	background-color: transparent;
+	font-size:20px;
+}
+
+
+.navbar{
+	xbackground:rgba(255,255,255,0.35);
+	xbackground:rgba(240,95,64,0.99);
+}
+.navbar-toggle{
+	background-color:#F05F40;
+	border:1px solid white;
+	color:#fff;
+}
+nav .container-fluid{
+	padding: 0 15% 0 15%;
+}
+.navbar-toggle:hover{
+	background-color:white;
+	border:1px solid #F05F40;
+	xcolor:#F05F40;
+}
+a.navbar-brand{
+	xcolor: #F05F40;
+	color:white;
+}
+a.navbar-brand:hover{
+	color:white;
+}
+#myCollapsingList li a{
+	color:#F05F40;
+}
+#myCollapsingList li.active a{
+	color:white;
+	background-color:#F05F40;
+}
+#myCollapsingList li a:hover{
+	background-color: #F05F40;
+	color:white;
+}
+
+/* HEADER STYLING */
+xheader{
+	background-image:url(../img/westland/room/Ejector-Seat-216.jpg);
+	background-size: cover;
+
+	-webkit-filter: opacity(0.7);
+    -moz-filter: opacity(0.7);
+    -o-filter: opacity(0.7);
+    -ms-filter: opacity(0.7);
+    filter: opacity(0.7);
+	
+	position:relative;
+	width:100%;
+	text-align:center;
+	color:white;
+	background-color:white;
+	
+	background-position:center;
+	min-height:100%;
+	font-size:14px;
+	padding-top:50px;
+}
+
+
+header .background-image{
+
+	background-image: url(../img/westland/room/Ejector-Seat-216.jpg);
+	background-size:cover;
+	display:block;
+	filter:opacity(0.5);
+	-webkit-filter:opacity(0.5);
+	height:800px;
+	left:0;
+	position:relative;
+	right:0;
+	z-index: 1;
+	width:100%;
+	min-height:100%;
+}
+
+
+
+
+header .header-content-inner{
+	font-family:'Rock Salt','Helvetica Neue',Arial,sans-serif;
+	font-size: 14px;
+	background:rgba(255,255,255,0.35);
+	border-radius:3px;
+	box-shadow: 0 1px 5px rgba(0,0,0,0.25);
+	top: 10px;
+	left:0;
+	position:fixed;
+	margin-left:20px;
+	margin-right:20px;
+	right:0;
+	z-index:2;
+	xmax-width:1000px;
+	padding:0 10px;
+	margin-top:5em;
+	
+
+}
+header h1{
+	text-align: center;
+}
+
+header p{
+	font-size:1.2em;
+	opacity:0.7;
+	text-align:center;
+	padding:10px;
+
+}
+.btn-primary{
+	background-color:#F05F40;
+	xborder:1px solid white;
+	border:0;
+	border-radius:15px;
+	padding:15px;
+}
+.btn-primary:hover{
+	background-color:white;
+	color:#F05F40;
+	border:1px solid #F05F40;
+}
+h1{
+	font-size:4em;
+}
+
+a{
+	transition: all .35s;
+}
+
+hr.primary{
+	background-color:#F05F40;
+	height:3px;
+	border:0;
+	width:7%;
+}
+
+header p{
+	margin: 20px;
+}
+
+/* ORANGE SECTION */
+
+.bg-primary{
+	background-color:#F05F40;
+	color:#fff;
+	font-size:14px;
+}
+
+section{
+	padding:100px 0;
+}
+section h2{
+	text-align: center;
+}
+section hr{
+	background-color:#ffffff;
+	height:3px;
+	border:0;
+	width:7%;
+}
+
+.text-faded{
+	opacity:0.7;
+}
+
+#getStartedBtn{
+	visibility: visible;  
+	-webkit-transform: translateY(0) scale(1); 
+	opacity: 1;
+	transform: translateY(0) scale(1); 
+	opacity: 1;
+	-webkit-transition: all 0.35s ease 0s, -webkit-transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; 
+	transition: all 0.35s ease 0s, transform 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s, opacity 1s cubic-bezier(0.6, 0.2, 0.1, 1) 0.2s; 
+}
+
+#btnRow a{
+	margin-left:auto;
+	margin-right:auto;
+}
+
+/* SERVICES SECTION */
+#services{
+	background-color: #fff;
+	font-size:14px;
+}
+
+.fa-4x{
+	color:#F05F40;
+}
+.service-box h3{
+	opacity:0.8;
+}
+.text-muted{
+	opacity: 0.8;
+}
+
+/* CONTACT SECTION */
+#contact{
+	font-size:14px;
+}
+
+.fa{
+	; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; 
+}
