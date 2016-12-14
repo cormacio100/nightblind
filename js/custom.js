@@ -2,7 +2,7 @@
 // function hides details of band members
 var hideMembers = function defaultHide(obj){
 
-	console.log('object name is '+obj.name);
+	//console.log('object name is '+obj.name);
 
 	var name = obj.name;
 
@@ -38,7 +38,7 @@ $(function(){
 	// crete nice slow effect for when links are clicked
 	$('.anchorLink').on('click',function(event){
 		event.preventDefault();
-
+		console.log('anchorLink clicked');
 		$('html body').animate({
 			scrollTop: $($.attr(this,'href')).offset().top
 		},500);

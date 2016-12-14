@@ -154,9 +154,9 @@ header p{
 
 
 /*******************/
-/* MEMBERS SECTION */
+/* member SECTION */
 /*******************/
-#members{
+#member{
 	xbackground-color: #fff;
 	background-image:url(../img/westland/room/Ejector-Seat-127d.jpg);
 	position:relative;
@@ -169,15 +169,15 @@ header p{
 	min-height:100%;
 	font-size:14px;
 }
-#members a{
+#member a{
 	color:#f10000;
 }
-#members a:hover{
+#member a:hover{
 	xcolor:#aaa;
 	text-decoration:none;
 }
 
-#members h2{
+#member h2{
 	xcolor:#aaa;
 }
 
@@ -195,17 +195,17 @@ header p{
 	color:#aaa;
 }
 
-#members .fa-caret-square-o-down:hover,
-#members .fa-caret-square-o-left:hover,
-#members .fa-caret-square-o-up:hover,
-#members .fa-caret-square-o-right:hover{
+#member .fa-caret-square-o-down:hover,
+#member .fa-caret-square-o-left:hover,
+#member .fa-caret-square-o-up:hover,
+#member .fa-caret-square-o-right:hover{
 	transform:rotate(90deg);
 }
 
-#members #cormac,
-#members #hugh,
-#members #davy,
-#members #freek{
+#member #cormac,
+#member #hugh,
+#member #davy,
+#member #freek{
 	padding:1em;
 	margin-top:1em;
 	background-image:url(../img/westland/room/bg-noise.png);
