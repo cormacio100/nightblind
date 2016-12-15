@@ -4,11 +4,25 @@
 // Uses Dependency Injection
 // 	- 	ngRoute allows us to route by using $routeProvider module
 //	-	RouteControllers are the controllers we call when we hit a specific URL
-angular.module('nightBlindApp',['ngRoute','RouteControllers','SectionControllers','SectionDirective','AnchorLinkControllers']);
+angular.module('nightBlindApp',[
+	'ngRoute',
+	'RouteControllers',
+	'SectionControllers',
+	'AnchorLinkControllers',
+	'NavDirective',
+	'HomeDirective',
+	'AboutDirective',
+	'MemberDirective',
+	'GalleryDirective',
+	'MusicDirective',
+	'VideoDirective',
+	'ContactDirective',
+	]);
 
 
 
-// Create Routes that will appear between the <div ng-view></div> tags
+// ROUTES NOT IN USE YET
+/*
 angular.module('nightBlindApp').config(function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl: 'partials/home.html',
@@ -33,7 +47,7 @@ angular.module('nightBlindApp').config(function($routeProvider){
 		controller: 'ContactController'
 	});
 });
-
+*/
 
 // ***********
 //	- NEED TO INCLUDE ng-view DIV in index page for templating
