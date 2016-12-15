@@ -5,6 +5,7 @@
 //	-	$location - used for routing
 
 // allow for anchor links on the page
+/** NOT WORKING YET **/
 angular.module('AnchorLinkControllers',[])
 	.controller('AnchorController',function($scope,$location,$anchorScroll){
 		$scope.scrollTo = function(id){
@@ -17,18 +18,109 @@ angular.module('AnchorLinkControllers',[])
 	});
 
 
+// Controller to build the NAVIGATION
 angular.module('SectionControllers',[])
-	.controller('NavController',function($scope,$location){
+	.controller('NavController',function($scope,$location,$anchorScroll){
 		$scope.links = [
-			{title:'Home',href:'#home'},
-			{title:'About',href:'#about'},
-			{title:'Members',href:'#member'},
-			{title:'Gallery',href:'#gallery'},
-			{title:'Music',href:'#music'},
-			{title:'Video',href:'#video'},
-			{title:'Contact',href:'#contact'},
+			{title:'Home',href:'home'},
+			{title:'About',href:'about'},
+			{title:'Members',href:'member'},
+			{title:'Gallery',href:'gallery'},
+			{title:'Music',href:'music'},
+			{title:'Video',href:'video'},
+			{title:'Contact',href:'contact'},
 		];
+
+		$scope.scrollTo = function(id){
+
+			/*$('html body').animate({
+
+				scrollTop: $($.attr(this,'href')).offset().top
+			},500);*/
+
+			$location.hash(id)
+
+			$anchorScroll;
+		};
+
+	})
+	.controller('MemberController',function($scope,$location){
+		console.log('Member Section loaded');	
+
+		// function hides details of band members
+		var hideMembers = function(obj){
+
+			console.log('object name is '+obj.name);
+
+			var name = obj.name;
+
+			var hideArr = [];
+
+			// build the relavant array for hiding divs
+			if('allMembers' == name){
+				hideArr=['cormac','hugh','davy','freek'];
+			}else if('cormac' == name){
+				hideArr=['hugh','davy','freek'];
+			}else if('hugh' == name){
+				hideArr=['cormac','davy','freek'];
+			}else if('davy' == name){
+				hideArr=['cormac','hugh','freek'];
+			}else if('freek' == name){
+				hideArr=['cormac','hugh','davy'];
+			}
+
+			// hide divs
+			$.each(hideArr,function(index,value){
+
+				var hideDiv = '#'+value+'_details';
+
+				console.log('hide div '+hideDiv);
+
+				$(hideDiv).hide();
+			});
+		};
+
+		var obj = {
+			name:'allMembers'
+		};
+		hideMembers(obj);
+
+		$('#cormacThumb').click(function(){
+
+			console.log('cormac clicked')
+			this.name='cormac';
+			// need to hide relevant divs for other members
+			hideMembers(this);
+
+			console.log('showing');
+			$('#cormac_details').slideToggle();
+		});
+
+		$('#hughThumb').click(function(){
+			this.name='hugh';
+			hideMembers(this);
+			$('#hugh_details').slideToggle();
+		});
+		$('#davyThumb').click(function(){
+			this.name='davy';
+			hideMembers(this);
+			$('#davy_details').slideToggle();
+		});
+		$('#freekThumb').click(function(){
+			this.name='freek';
+			hideMembers(this);
+			$('#freek_details').slideToggle();
+		});
 	});
+	/*.controller('AnchorController',function($scope,$location,$anchorScroll){
+		$scope.scrollTo = function(id){
+
+			console.log('scrolling');
+
+			$location.hash(id);
+			$anchorScroll;
+		}
+	});*/
 
 
 

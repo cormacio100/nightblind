@@ -11,26 +11,16 @@
 		</div>
 		<div class="collapse navbar-collapse" id="myCollapsingList" data-ng-controller="NavController">
 			<ul class="nav navbar-nav navbar-right">
-
-				<li class="active anchorLink"><a ng-click="scrollTo('home')" class="anchorLink">Home</a></li>
+				<!--<li data-ng-repeat="link in links">
+					<a ng-click="scrollTo('{{link.href}}')" class="anchorLink">{{link.title}}</a>
+				</li>-->
+				<li><a ng-click="scrollTo('home')" class="anchorLink">Home</a></li>
 				<li><a ng-click="scrollTo('about')" class="anchorLink">About</a></li>
 				<li><a ng-click="scrollTo('member')" class="anchorLink">Members</a></li>
 				<li><a ng-click="scrollTo('gallery')" class="anchorLink">Gallery</a></li>
 				<li><a ng-click="scrollTo('music')" class="anchorLink">Music</a></li>
 				<li><a ng-click="scrollTo('video')" class="anchorLink">Video</a></li>
 				<li><a ng-click="scrollTo('contact')" class="anchorLink">Contact</a></li>
-
-
-				<!--<li class="active anchorLink"><a href="#home" class="anchorLink">Home</a></li>
-				<li><a href="#about" class="anchorLink">About</a></li>
-				<li><a href="#member" class="anchorLink">Members</a></li>
-				<li><a href="#gallery" class="anchorLink">Gallery</a></li>
-				<li><a href="#music" class="anchorLink">Music</a></li>
-				<li><a href="#video" class="anchorLink">Video</a></li>
-				<li><a href="#contact" class="anchorLink">Contact</a></li>
-				<li data-ng-repeat="link in links">
-					<a ng-click="scrollTo('{{link.href}}')" class="anchorLink">{{link.title}}</a>
-				</li>-->
 			</ul>
 		</div>
 	</div>

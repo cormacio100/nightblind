@@ -2,7 +2,7 @@
 // function hides details of band members
 var hideMembers = function defaultHide(obj){
 
-	//console.log('object name is '+obj.name);
+	console.log('object name is '+obj.name);
 
 	var name = obj.name;
 
@@ -23,9 +23,15 @@ var hideMembers = function defaultHide(obj){
 
 	// hide divs
 	$.each(hideArr,function(index,value){
-		$('#'+value).hide();
+
+		var hideDiv = '#'+value+'_details';
+
+		console.log('hide div '+hideDiv);
+
+		$(hideDiv).hide();
 	});
 
+	return;
 
 	/*$('#cormac').hide();
 	$('#hugh').hide();
@@ -35,15 +41,26 @@ var hideMembers = function defaultHide(obj){
 
 // on page load
 $(function(){
+
+	//console.log('page loaded');
+
+	/**
+		LINK ANIMATION - NOT WORKING
+	**/
+
 	// crete nice slow effect for when links are clicked
-	$('.anchorLink').on('click',function(event){
+	/*$('.anchorLink').on('click',function(event){
 		event.preventDefault();
 		console.log('anchorLink clicked');
 		$('html body').animate({
 			scrollTop: $($.attr(this,'href')).offset().top
 		},500);
-	});
+	});*/
 
+
+/**
+DISPLAY of MEMBERS
+**/
 	var obj = {
 		name:'allMembers'
 	};
@@ -56,7 +73,11 @@ $(function(){
 	});*/
 
 	$('#cormacThumb').click(function(){
+
+		console.log('cormac clicked')
 		this.name='cormac';
+
+		// need to hide relevant divs for other members
 		hideMembers(this);
 		$('#cormac').slideToggle();
 	});

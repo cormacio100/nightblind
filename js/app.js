@@ -22,32 +22,17 @@ angular.module('nightBlindApp',[
 
 
 // ROUTES NOT IN USE YET
-/*
+
 angular.module('nightBlindApp').config(function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl: 'partials/home.html',
 		controller: 'HomeController'
-	}).when('/about',{
-		templateUrl: 'partials/about.html',
-		controller: 'AboutController'
-	}).when('/member',{
-		templateUrl: 'partials/member.html',
-		controller: 'MemberController'
-	}).when('/gallery',{
-		templateUrl: 'partials/gallery.html',
-		controller: 'GalleryController'
-	}).when('/music',{
-		templateUrl: 'partials/music.html',
+	}).when('/gallery_live',{
+		templateUrl: 'partials/gallery_live.html',
 		controller: 'MusicController'
-	}).when('/video',{
-		templateUrl: 'partials/video.html',
-		controller: 'VideoController'
-	}).when('/contact',{
-		templateUrl: 'partials/contact.html',
-		controller: 'ContactController'
 	});
 });
-*/
+
 
 // ***********
 //	- NEED TO INCLUDE ng-view DIV in index page for templating
