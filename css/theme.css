@@ -262,6 +262,17 @@ header p{
 #music{
 	background-color:#fff;
 	font-size:14px;
+
+}
+#music #accordion{
+	width:60%;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+#music .panel-heading{
+	background-color: #aaa;
+	color:white;
 }
 
 .music-section{
