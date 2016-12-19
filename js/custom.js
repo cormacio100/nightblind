@@ -30,13 +30,6 @@ var hideMembers = function defaultHide(obj){
 
 		$(hideDiv).hide();
 	});
-
-	return;
-
-	/*$('#cormac').hide();
-	$('#hugh').hide();
-	$('#davy').hide();
-	$('#freek').hide();*/
 };
 
 // on page load

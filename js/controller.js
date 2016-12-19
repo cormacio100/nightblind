@@ -31,17 +31,17 @@ angular.module('SectionControllers',[])
 			{title:'Contact',href:'contact'},
 		];
 
-		$scope.scrollTo = function(id){
+		//$scope.scrollTo = function(id){
 
 			/*$('html body').animate({
 
 				scrollTop: $($.attr(this,'href')).offset().top
 			},500);*/
 
-			$location.hash(id)
+			//$location.hash(id)
 
-			$anchorScroll;
-		};
+			//$anchorScroll;
+		//};
 
 	})
 	.controller('MemberController',function($scope,$location){

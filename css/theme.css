@@ -31,6 +31,16 @@ body{
 	
 }
 
+.content-inner{
+	max-width:1000px;
+	margin-left:auto;
+	margin-right:auto;
+}
+.carousel-inner > .item > img {
+    margin: 0 auto;
+}
+
+
 
 
 section{
@@ -73,12 +83,8 @@ a.navbar-brand:hover{
 }
 #myCollapsingList li.active a{
 	color:white;
-	xbackground-image:url(../img/westland/room/bg-noise.png);
-	xbackground-color:#f10000;
 }
 #myCollapsingList li a:hover{
-	xbackground-color: #f10000;
-	xbackground-image:url(../img/westland/room/bg-noise.png);
 	color:white;
 }
 
@@ -100,11 +106,7 @@ header{
 	font-size:14px;
 	padding-top:50px;
 }
-.header-content-inner{
-	max-width:1000px;
-	margin-left:auto;
-	margin-right:auto;
-}
+
 header .carousel .item{
 	Xheight:500px;
 }
@@ -167,7 +169,7 @@ header p{
 	
 	background-color: white;
 	font-size:14px;
-	color:#aaa;
+	color:#000;
 }
 
 /*******************/
@@ -201,7 +203,7 @@ header p{
 
 .thumb{
 	xbackground-color:grey;
-	background-image:url(../img/bg/bg-noise.png);
+	background-image:url(../img/bg/scratched2_bw.png);
 	opacity:0.9;
 	border-radius: 25px;
 	padding:1em;
@@ -228,7 +230,7 @@ header p{
 #member #freek_details{
 	padding:1em;
 	margin-top:1em;
-	background-image:url(../img/bg/bg-noise.png);
+	background-image:url(../img/bg/scratched2_bw.png);
 	color:white;
 	opacity:0.9;
 	border:1px solid #f10000;
@@ -252,7 +254,7 @@ header p{
 /* GALLERY SECTION*/
 /******************/
 #gallery{
-	background-image:url(../img/bg/bg-noise.png);
+	background-image:url(../img/bg/scratched2_bw.png);
 	color:white;
 }
 
