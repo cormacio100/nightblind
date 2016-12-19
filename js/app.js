@@ -6,7 +6,7 @@
 //	-	RouteControllers are the controllers we call when we hit a specific URL
 angular.module('nightBlindApp',[
 	'ngRoute',
-	'RouteControllers',
+	//'RouteControllers',
 	'SectionControllers',
 	'AnchorLinkControllers',
 	'NavDirective',
@@ -17,6 +17,7 @@ angular.module('nightBlindApp',[
 	'MusicDirective',
 	'VideoDirective',
 	'ContactDirective',
+	'ui.bootstrap.modal'
 	]);
 
 

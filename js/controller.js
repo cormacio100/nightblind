@@ -31,26 +31,27 @@ angular.module('SectionControllers',[])
 			{title:'Contact',href:'contact'},
 		];
 
-		//$scope.scrollTo = function(id){
+		// allows for scrolling to anchor links  
+		$scope.scrollTo = function(id){
 
 			/*$('html body').animate({
 
 				scrollTop: $($.attr(this,'href')).offset().top
 			},500);*/
 
-			//$location.hash(id)
+			$location.hash(id)
 
-			//$anchorScroll;
-		//};
+			$anchorScroll;
+		};
 
 	})
 	.controller('MemberController',function($scope,$location){
-		console.log('Member Section loaded');	
+		//console.log('Member Section loaded');	
 
 		// function hides details of band members
 		var hideMembers = function(obj){
 
-			console.log('object name is '+obj.name);
+			//console.log('object name is '+obj.name);
 
 			var name = obj.name;
 
@@ -74,7 +75,7 @@ angular.module('SectionControllers',[])
 
 				var hideDiv = '#'+value+'_details';
 
-				console.log('hide div '+hideDiv);
+				//console.log('hide div '+hideDiv);
 
 				$(hideDiv).hide();
 			});
@@ -111,20 +112,30 @@ angular.module('SectionControllers',[])
 			hideMembers(this);
 			$('#freek_details').slideToggle();
 		});
+	})
+	.controller('GalleryController',function($scope,$location){
+
+		$scope.showModal = false;
+
+
+		$scope.open = function() {
+		  $scope.showModal = true;
+		};
+
+		$scope.ok = function() {
+		  $scope.showModal = false;
+		};
+
+		$scope.cancel = function() {
+		  $scope.showModal = false;
+		};
+	
 	});
-	/*.controller('AnchorController',function($scope,$location,$anchorScroll){
-		$scope.scrollTo = function(id){
-
-			console.log('scrolling');
-
-			$location.hash(id);
-			$anchorScroll;
-		}
-	});*/
 
 
 
 
+/*
 angular.module('RouteControllers',[])
 
 	.controller('HomeController',function($scope,$location){
@@ -137,6 +148,8 @@ angular.module('RouteControllers',[])
 		
 	})
 	.controller('GalleryController',function($scope,$location){
+
+
 		
 	})
 	.controller('MusicController',function($scope,$location){
@@ -147,4 +160,4 @@ angular.module('RouteControllers',[])
 	})
 	.controller('ContactController-+',function($scope,$location){
 		
-	});
+	});*/
