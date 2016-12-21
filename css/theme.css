@@ -209,6 +209,15 @@ header p{
 	padding:1em;
 }
 
+#member_details{
+	background-image:url(../img/bg/scratched2_bw.png);
+	opacity:0.9;
+	border-radius: 25px;
+	padding:1em;
+	margin-top:2em;
+	border:1px solid #aaa;
+}
+
 .thumb:hover{
 	opacity:1;
 	color:#aaa;

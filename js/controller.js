@@ -6,6 +6,7 @@
 
 // allow for anchor links on the page
 /** NOT WORKING YET **/
+/*
 angular.module('AnchorLinkControllers',[])
 	.controller('AnchorController',function($scope,$location,$anchorScroll){
 		$scope.scrollTo = function(id){
@@ -15,7 +16,7 @@ angular.module('AnchorLinkControllers',[])
 			$location.hash(id);
 			$anchorScroll;
 		}
-	});
+	});*/
 
 
 // Controller to build the NAVIGATION
@@ -45,16 +46,14 @@ angular.module('SectionControllers',[])
 		};
 
 	})
-	.controller('MemberController',function($scope,$location){
+	.controller('MemberController',function($scope,$location,MemberAPIService){
 		//console.log('Member Section loaded');	
 
-		// function hides details of band members
+		/**
+		 * function HIDES details of band members
+		 */
 		var hideMembers = function(obj){
-
-			//console.log('object name is '+obj.name);
-
 			var name = obj.name;
-
 			var hideArr = [];
 
 			// build the relavant array for hiding divs
@@ -72,46 +71,106 @@ angular.module('SectionControllers',[])
 
 			// hide divs
 			$.each(hideArr,function(index,value){
-
 				var hideDiv = '#'+value+'_details';
-
-				//console.log('hide div '+hideDiv);
-
 				$(hideDiv).hide();
 			});
 		};
 
+		var makeAPICall = function(obj){
+			// array to hold band members
+			//$scope.bandMemberArr = [];
+
+			// currently no API exists to pull data from
+			var url = '';
+
+			console.log('sending API request');
+
+			var member = {};
+
+			// pass URL and user obj that contains the requested name of band member
+			//return MemberAPIService.retrieveMembers(url, obj);
+			var member = MemberAPIService.retrieveMembers(url, obj);
+			console.log('returned member name is '+member.name);
+			return member;
+
+			/*console.log('returned member name is '+member.name);
+
+			$scope.title = member.title;
+			$scope.name = member.title;
+			$scope.instrument = member.title;
+			$scope.gear = member.title;*/
+
+			//console.log('member is '+member.name);
+
+			/*MemberAPIService.retrieveMembers(url, obj).then(function(results){
+
+				$scope.member = MemberAPIService.retrieveMembers(result);
+
+				// display the data
+				//$scope.member = results.data;
+			}).catch(function(err){
+				// display the error
+				console.log(err);
+			});*/
+		};
+
+
+		// by default all member divs are hidden
 		var obj = {
 			name:'allMembers'
 		};
 		hideMembers(obj);
 
+		var memberToShow = {};
+
 		$('#cormacThumb').click(function(){
-
-			console.log('cormac clicked')
+			
 			this.name='cormac';
-			// need to hide relevant divs for other members
-			hideMembers(this);
 
-			console.log('showing');
-			$('#cormac_details').slideToggle();
+			console.log('name clicked: '+this.name);
+			// need to hide relevant divs for other members
+			//hideMembers(this);
+			//console.log('showing cormac div');
+			//$('#cormac_details').slideToggle();
+			memberToShow = makeAPICall(this);
+			/*MemberAPIService.retrieveMembers(url, obj);
+
+			console.log('returned member name is '+member.name);
+
+			$scope.title = member.title;
+			$scope.name = member.title;
+			$scope.instrument = member.title;
+			$scope.gear = member.title;*/
 		});
 
 		$('#hughThumb').click(function(){
 			this.name='hugh';
-			hideMembers(this);
-			$('#hugh_details').slideToggle();
+			//hideMembers(this);
+			//$('#hugh_details').slideToggle();
+			memberToShow = makeAPICall(this);
 		});
 		$('#davyThumb').click(function(){
 			this.name='davy';
-			hideMembers(this);
-			$('#davy_details').slideToggle();
+			//hideMembers(this);
+			//$('#davy_details').slideToggle();
+			memberToShow = makeAPICall(this);
 		});
 		$('#freekThumb').click(function(){
 			this.name='freek';
-			hideMembers(this);
-			$('#freek_details').slideToggle();
+			//hideMembers(this);
+			//$('#freek_details').slideToggle();
+			memberToShow = makeAPICall(this);
 		});
+
+		console.log('returned member name is '+memberToShow.name);
+
+		$scope.title = memberToShow.title;
+		$scope.name = memberToShow.title;
+		$scope.instrument = memberToShow.title;
+		$scope.gear = memberToShow.title;
+
+
+
 	})
 	.controller('GalleryController',function($scope,$location){
 
@@ -119,6 +178,7 @@ angular.module('SectionControllers',[])
 
 
 		$scope.open = function() {
+			console.log('open clicked');
 		  $scope.showModal = true;
 		};
 

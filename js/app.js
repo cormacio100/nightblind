@@ -8,7 +8,7 @@ angular.module('nightBlindApp',[
 	'ngRoute',
 	//'RouteControllers',
 	'SectionControllers',
-	'AnchorLinkControllers',
+	//'AnchorLinkControllers',
 	'NavDirective',
 	'HomeDirective',
 	'AboutDirective',
@@ -17,13 +17,14 @@ angular.module('nightBlindApp',[
 	'MusicDirective',
 	'VideoDirective',
 	'ContactDirective',
-	'ui.bootstrap.modal'
+	'ui.bootstrap.modal',
+	'MemberService'
 	]);
 
 
 
 // ROUTES NOT IN USE YET
-
+/*
 angular.module('nightBlindApp').config(function($routeProvider){
 	$routeProvider.when('/',{
 		templateUrl: 'partials/home.html',
@@ -33,7 +34,7 @@ angular.module('nightBlindApp').config(function($routeProvider){
 		controller: 'MusicController'
 	});
 });
-
+*/
 
 // ***********
 //	- NEED TO INCLUDE ng-view DIV in index page for templating
