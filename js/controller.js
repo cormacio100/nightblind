@@ -46,12 +46,41 @@ angular.module('SectionControllers',[])
 		};
 
 	})
-	.controller('MemberController',function($scope,$location,MemberAPIService){
+	.controller('MemberController',function($scope,$http){
+		
+		/*
+			Need to use a filter to hide user initially
+		*/
+
+
+		var config = {
+			params: {
+				name: 'Cormac Liston'
+			}
+		};
+
+
+
+		// use HTTP service to retrieve the member data
+		$http.get('js/data.json')
+			.success(function(data){
+				$scope.members = data;
+			}).error(function(data){
+				console.log('error occurred');
+			});
+
+		//$http({
+		   // url: 'js/data.json', 
+		   // method: "GET",
+		    //params: {user_id: user.id}
+		 //});
+
+	})
+	/*.controller('MemberController',function($scope,$location,MemberAPIService){
 		//console.log('Member Section loaded');	
 
-		/**
-		 * function HIDES details of band members
-		 */
+		
+		// function HIDES details of band members
 		var hideMembers = function(obj){
 			var name = obj.name;
 			var hideArr = [];
@@ -111,7 +140,7 @@ angular.module('SectionControllers',[])
 			}).catch(function(err){
 				// display the error
 				console.log(err);
-			});*/
+			});
 		};
 
 
@@ -140,7 +169,7 @@ angular.module('SectionControllers',[])
 			$scope.title = member.title;
 			$scope.name = member.title;
 			$scope.instrument = member.title;
-			$scope.gear = member.title;*/
+			$scope.gear = member.title;
 		});
 
 		$('#hughThumb').click(function(){
@@ -171,7 +200,7 @@ angular.module('SectionControllers',[])
 
 
 
-	})
+	})*/
 	.controller('GalleryController',function($scope,$location){
 
 		$scope.showModal = false;
