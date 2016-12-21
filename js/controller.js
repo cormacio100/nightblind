@@ -61,14 +61,72 @@ angular.module('SectionControllers',[])
 
 
 
+		
+
+
 		// use HTTP service to retrieve the member data
-		$http.get('js/data.json')
-			.success(function(data){
-				$scope.members = data;
-			}).error(function(data){
-				console.log('error occurred');
+		var retrieveData = function(url){
+
+			$http({
+				method: 'GET',
+				url: url,
+				config: {"title":"cormacObj"}
+			}).then(function successCallback(response) {
+			    $scope.members = response.data;
+			}, function errorCallback(response) {
+			    // called asynchronously if an error occurs
+			    // or server returns response with an error status.
+			
+			    console.log('error occurred');
 			});
 
+
+
+
+
+			/*$http.get(url, config)
+			.then(function successCallback(response){
+				$scope.members = response.data;
+			}
+			,function errorCallback(data){
+				console.log('error occurred');
+			});*/
+
+			console.log('url is '+url);
+		}
+
+		var url='js/data.json';
+
+		// resets the url after each use
+		var resetUrl = function(){
+			url='js/data.json';
+		}
+
+		
+
+		$('#cormacThumb').click(function(){
+			//url = url+'?title=cormacObj';
+			retrieveData(url);
+
+			resetUrl();
+		});
+		$('#hughThumb').click(function(){
+			url = url+'?title=hughObj';
+			retrieveData(url);
+
+			resetUrl();
+		});
+		$('#davyThumb').click(function(){
+			url = url+'?title=davyObj';
+			retrieveData(url);
+
+			resetUrl();
+		});
+		$('#freekThumb').click(function(){
+			url = url+'?title=freekObj';
+			retrieveData(url);
+			resetUrl();
+		});
 		//$http({
 		   // url: 'js/data.json', 
 		   // method: "GET",
