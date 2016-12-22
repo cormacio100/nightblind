@@ -49,14 +49,16 @@ angular.module('SectionControllers',[])
 		};
 
 	})
-	.controller('MemberController',function($scope,$http){
-		// use HTTP service to retrieve the member data
+	.controller('MemberController',function($scope,$http,MemberAPIService){
+
+		// function retrieves data from service
 		var retrieveData = function(url,shortname){
-			$http({
-				method: 'GET',
-				url: url,
-			}).then(function successCallback(response){
-			    var memberArr = response.data;
+			
+			// call to API service
+			// pass the url. No params passed
+			MemberAPIService.retrieveMembers(url).then(function(results) {
+				var memberArr = results.data;
+				// loop
 			    $.each(memberArr,function(index,value){
 			    	if(value.shortname==shortname){
 			    		$scope.name = value.name;
@@ -64,16 +66,12 @@ angular.module('SectionControllers',[])
 			    		$scope.gear = value.gear;
 			    	}	
 			    })
-			}, function errorCallback(data) {
-			    // if an error occurs
-			    // or server returns response with an error status.
-			    $('#member_details').html('<h2>error occurred</h2');
+
 			});
 		}
-
+		// location of data to be retrieved
 		var url='js/data.json';
-		console.log('url ='+url);
-
+		// wait for a band member name to be clicked before sending request to API Service
 		$('#cormacThumb').click(function(){
 			retrieveData(url,'Cormac_Liston');
 		});
@@ -86,13 +84,11 @@ angular.module('SectionControllers',[])
 		$('#freekThumb').click(function(){
 			retrieveData(url,'Freek_Vermeer');
 		});
-		//$http({
-		   // url: 'js/data.json', 
-		   // method: "GET",
-		    //params: {user_id: user.id}
-		 //});
+
 
 	})
+
+
 	/*.controller('MemberController',function($scope,$location,MemberAPIService){
 		//console.log('Member Section loaded');	
 
