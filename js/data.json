@@ -1,24 +1,24 @@
 [ 
 	{
-		"title": "cormacObj",
+		"shortname":"Cormac_Liston",
 		"name": "Cormac Liston",
 		"instrument": "Guitar / Vocals",
 		"gear": "Fender Blacktop Stratocaster HH, Epiphone Les Paul - Zakk Wylde Custom, Vox AC30 VR"
 	},
 	{
-		"title": "hughObj",
+		"shortname":"Hugh_OConnor",
 		"name": "Hugh O'Connor",
 		"instrument": "Guitar / Vocals",
 		"gear": "Fender Stratocaster, Vox AC30 VR"
 	},
 	{
-		"title": "davyObj",
+		"shortname":"Davy_Dwyer",
 		"name": "Davy Dwyer",
 		"instrument": "Drums",
 		"gear": "Peavy, Paiste - Nicko McBrain Custom"
 	},
 	{
-		"title": "freekObj",
+		"shortname":"Freek_Vermeer",
 		"name": "Freek Vermeer",
 		"instrument": "Bass",
 		"gear": "Fender Jazz Bass, Trace Elliot GP12"

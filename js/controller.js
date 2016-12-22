@@ -35,6 +35,9 @@ angular.module('SectionControllers',[])
 		// allows for scrolling to anchor links  
 		$scope.scrollTo = function(id){
 
+			/*******************************************************/
+			// NEED TO PUT IN ANIMATION TO SLOW DOWN THE SCROLLING
+			/*******************************************************/
 			/*$('html body').animate({
 
 				scrollTop: $($.attr(this,'href')).offset().top
@@ -47,65 +50,41 @@ angular.module('SectionControllers',[])
 
 	})
 	.controller('MemberController',function($scope,$http){
-		
-		/*
-			Need to use a filter to hide user initially
-		*/
-
-
-		var config = {
-			params: {
-				name: 'Cormac Liston'
-			}
-		};
-
-
-
-		
-
-
 		// use HTTP service to retrieve the member data
-		var retrieveData = function(url,title){
+		var retrieveData = function(url,shortname){
 			$http({
 				method: 'GET',
 				url: url,
-				// config: {"title":"cormacObj"}
-			}).then(function successCallback(response) {
-
+			}).then(function successCallback(response){
 			    var memberArr = response.data;
-
 			    $.each(memberArr,function(index,value){
-
-			    	if(value.title==title){
+			    	if(value.shortname==shortname){
 			    		$scope.name = value.name;
 			    		$scope.instrument = value.instrument;
 			    		$scope.gear = value.gear;
 			    	}	
 			    })
 			}, function errorCallback(data) {
-			    // called asynchronously if an error occurs
+			    // if an error occurs
 			    // or server returns response with an error status.
-			
-			    console.log('error occurred');
+			    $('#member_details').html('<h2>error occurred</h2');
 			});
-
-
-			console.log('url is '+url);
 		}
 
 		var url='js/data.json';
+		console.log('url ='+url);
 
 		$('#cormacThumb').click(function(){
-			retrieveData(url,'cormacObj');
+			retrieveData(url,'Cormac_Liston');
 		});
 		$('#hughThumb').click(function(){
-			retrieveData(url,'hughObj');
+			retrieveData(url,'Hugh_OConnor');
 		});
 		$('#davyThumb').click(function(){
-			retrieveData(url,'davyObj');
+			retrieveData(url,'Davy_Dwyer');
 		});
 		$('#freekThumb').click(function(){
-			retrieveData(url,'freekObj');
+			retrieveData(url,'Freek_Vermeer');
 		});
 		//$http({
 		   // url: 'js/data.json', 
