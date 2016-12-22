@@ -65,15 +65,24 @@ angular.module('SectionControllers',[])
 
 
 		// use HTTP service to retrieve the member data
-		var retrieveData = function(url){
-
+		var retrieveData = function(url,title){
 			$http({
 				method: 'GET',
 				url: url,
-				config: {"title":"cormacObj"}
+				// config: {"title":"cormacObj"}
 			}).then(function successCallback(response) {
-			    $scope.members = response.data;
-			}, function errorCallback(response) {
+
+			    var memberArr = response.data;
+
+			    $.each(memberArr,function(index,value){
+
+			    	if(value.title==title){
+			    		$scope.name = value.name;
+			    		$scope.instrument = value.instrument;
+			    		$scope.gear = value.gear;
+			    	}	
+			    })
+			}, function errorCallback(data) {
 			    // called asynchronously if an error occurs
 			    // or server returns response with an error status.
 			
@@ -81,51 +90,22 @@ angular.module('SectionControllers',[])
 			});
 
 
-
-
-
-			/*$http.get(url, config)
-			.then(function successCallback(response){
-				$scope.members = response.data;
-			}
-			,function errorCallback(data){
-				console.log('error occurred');
-			});*/
-
 			console.log('url is '+url);
 		}
 
 		var url='js/data.json';
 
-		// resets the url after each use
-		var resetUrl = function(){
-			url='js/data.json';
-		}
-
-		
-
 		$('#cormacThumb').click(function(){
-			//url = url+'?title=cormacObj';
-			retrieveData(url);
-
-			resetUrl();
+			retrieveData(url,'cormacObj');
 		});
 		$('#hughThumb').click(function(){
-			url = url+'?title=hughObj';
-			retrieveData(url);
-
-			resetUrl();
+			retrieveData(url,'hughObj');
 		});
 		$('#davyThumb').click(function(){
-			url = url+'?title=davyObj';
-			retrieveData(url);
-
-			resetUrl();
+			retrieveData(url,'davyObj');
 		});
 		$('#freekThumb').click(function(){
-			url = url+'?title=freekObj';
-			retrieveData(url);
-			resetUrl();
+			retrieveData(url,'freekObj');
 		});
 		//$http({
 		   // url: 'js/data.json', 
