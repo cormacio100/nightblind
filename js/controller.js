@@ -3,10 +3,59 @@
 // Parameters
 //	-	$scope - default
 //	-	$location - used for routing
+//  -   using thise example I am setting variables globally
+//  	- 	https://jsfiddle.net/brettdewoody/y65G5/
 
 // Controller to build the NAVIGATION
-angular.module('SectionControllers',[])
-	.controller('NavController',function($scope,$location,$anchorScroll){
+var SectionControllers = angular.module('SectionControllers',[]);
+
+SectionControllers.controller('MainController',function($scope,$location,$anchorScroll,$routeParams){
+	var vm = this;
+});
+
+SectionControllers.controller('NavController',['$scope','$http',function($scope,$location,$anchorScroll){
+
+	console.log('this is the NaveController');
+
+	// this is a NESTED Controller
+	//var vm = this;
+	$scope.links = [
+			{title:'Home',href:'home'},
+			{title:'About',href:'home?scrollTo=about'},
+			{title:'Members',href:'home?scrollTo=member'},
+			{title:'Gallery',href:'home?scrollTo=gallery'},
+			{title:'Music',href:'home?scrollTo=music'},
+			{title:'Video',href:'home?scrollTo=video'},
+			{title:'Contact',href:'home?scrollTo=contact'},
+		];
+}]);
+
+SectionControllers.controller('MemberController',['$scope','$http',function($scope,$location,$anchorScroll){
+
+}]);
+
+
+SectionControllers.controller('GalleryController',function($scope,$location){
+
+		$scope.showModal = false;
+
+
+		$scope.open = function() {
+			console.log('open clicked');
+		  $scope.showModal = true;
+		};
+
+		$scope.ok = function() {
+		  $scope.showModal = false;
+		};
+
+		$scope.cancel = function() {
+		  $scope.showModal = false;
+		};
+	
+	});
+/*
+SectionControllers.controller('NavController',['$scope','$http',function($scope,$location,$anchorScroll){
 		$scope.links = [
 			{title:'Home',href:'home'},
 			{title:'About',href:'about'},
@@ -20,21 +69,23 @@ angular.module('SectionControllers',[])
 		// allows for scrolling to anchor links  
 		$scope.scrollTo = function(id){
 
-			/*******************************************************/
+			
 			// NEED TO PUT IN ANIMATION TO SLOW DOWN THE SCROLLING
-			/*******************************************************/
-			/*$('html body').animate({
+		
+			//$('html body').animate({
 
-				scrollTop: $($.attr(this,'href')).offset().top
-			},500);*/
+			//	scrollTop: $($.attr(this,'href')).offset().top
+			//},500);
 
 			$location.hash(id)
 
 			$anchorScroll;
 		};
 
-	})
-	.controller('MemberController',function($scope,$http,MemberAPIService){
+	}]);*/
+
+/*
+SectionControllers.controller('MemberController',function($scope,$http,MemberAPIService){
 
 		// function retrieves data from service
 		var retrieveData = function(url,shortname){
@@ -69,10 +120,8 @@ angular.module('SectionControllers',[])
 		$('#freekThumb').click(function(){
 			retrieveData(url,'Freek_Vermeer');
 		});
-
-
-	})
-	.controller('GalleryController',function($scope,$location){
+	});
+SectionControllers.controller('GalleryController',function($scope,$location){
 
 		$scope.showModal = false;
 
@@ -91,3 +140,4 @@ angular.module('SectionControllers',[])
 		};
 	
 	});
+*/

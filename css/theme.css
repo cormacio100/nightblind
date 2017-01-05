@@ -265,7 +265,25 @@ header p{
 #gallery{
 	background-image:url(../img/bg/scratched2_bw.png);
 	color:white;
+	font-size:14px;
 }
+#gallery ul{
+	display:flex;
+}
+#gallery ul li{
+	flex: 1;
+	list-style-type: none;
+}
+#gallery ul li a{
+	display: block;
+	color:white;
+}
+
+#gallery_main_container{
+	font-size:14px;
+	color:white;
+}
+
 
 /*****************/
 /* MUSIC SECTION */

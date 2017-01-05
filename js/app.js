@@ -3,12 +3,10 @@
 //	-	<html ng-app="nightBlindApp">
 // Uses Dependency Injection
 // 	- 	ngRoute allows us to route by using $routeProvider module
-//	-	RouteControllers are the controllers we call when we hit a specific URL
-angular.module('nightBlindApp',[
-	'ngRoute',
-	//'RouteControllers',
+//	-	RouteControllers are the controllers we call when we hit a specific URL 
+var nightBlindApp = angular.module('nightBlindApp',[
+	//'ngRoute',
 	'SectionControllers',
-	//'AnchorLinkControllers',
 	'NavDirective',
 	'HomeDirective',
 	'AboutDirective',
@@ -17,24 +15,37 @@ angular.module('nightBlindApp',[
 	'MusicDirective',
 	'VideoDirective',
 	'ContactDirective',
-	'ui.bootstrap.modal',
-	'MemberService'
+	//'ui.bootstrap.modal',
+	//'MemberService'
 	]);
 
-
-
-// ROUTES NOT IN USE YET
-/*
-angular.module('nightBlindApp').config(function($routeProvider){
-	$routeProvider.when('/',{
-		templateUrl: 'partials/home.html',
-		controller: 'HomeController'
-	}).when('/gallery_live',{
-		templateUrl: 'partials/gallery_live.html',
-		controller: 'MusicController'
+// define Routes
+nightBlindApp.config(function($routeProvider) {
+	
+	$routeProvider
+	.when('/home',{
+		controller: 'MainController',
+		templateUrl: 'partials/main_page.html'
+	})
+	.when('/gallery',{
+		controller: 'GalleryController',
+		templateUrl: 'partials/gallery_main.html',
+	})
+	.otherwise({
+		redirectTo: '/home'
 	});
 });
-*/
+
+// define how anchorlinks should work
+nightBlindApp.run(function($rootScope,$location,$anchorScroll,$routeParams){
+	// detect route changes
+	$rootScope.$on('$routeChangeSuccess',function(newRoute,oldRoute){
+		// update the URL
+		$location.hash($routeParams.scrollTo);
+		// read from the URL and scroll to correct location
+		$anchorScroll();
+	});
+});
 
 // ***********
 //	- NEED TO INCLUDE ng-view DIV in index page for templating
