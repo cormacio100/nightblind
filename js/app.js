@@ -7,14 +7,14 @@
 var nightBlindApp = angular.module('nightBlindApp',[
 	//'ngRoute',
 	'SectionControllers',
-	'NavDirective',
-	'HomeDirective',
-	'AboutDirective',
-	'MemberDirective',
-	'GalleryDirective',
-	'MusicDirective',
-	'VideoDirective',
-	'ContactDirective',
+	//'NavDirective',
+	//'HomeDirective',
+	//'AboutDirective',
+	//'MemberDirective',
+	//'GalleryDirective',
+	//'MusicDirective',
+	//'VideoDirective',
+	//'ContactDirective',
 	//'ui.bootstrap.modal',
 	//'MemberService'
 	]);

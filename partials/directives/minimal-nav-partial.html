@@ -1,4 +1,4 @@
-<nav class="navbar navbar-fixed-top affix" ng-controller="NavController">
+<nav class="navbar navbar-fixed-top affix">
 	<div class="container-fluid">
 		<div class="navbar-header">
 			<!--Brand and toggle get grouped for better mobile display-->
@@ -7,14 +7,7 @@
 				<span class="glyphicon glyphicon-arrow-down"></span>
 				Menu
 			</button>
-			<a class="navbar-brand" href="#">Night Blind</a>
-		</div>
-		<div class="collapse navbar-collapse" id="myCollapsingList" >
-			<ul class="nav navbar-nav navbar-right">
-				<li data-ng-repeat="link in links">
-					<a href="#{{link.href}}">{{link.title}}</a>
-				</li>
-			</ul>
+			<a class="navbar-brand" href="#home?scrollTo=gallery">Back</a>
 		</div>
 	</div>
 </nav>

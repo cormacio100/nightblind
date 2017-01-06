@@ -10,6 +10,10 @@
     font-family: 'Permanent Marker','Open Sans','Helvetica Neue',Arial,sans-serif;
 }
 
+.navbar{
+	font-size: 14p
+}
+
 h2{
 	text-shadow: 2px 2px #F10000;
 }
@@ -28,7 +32,6 @@ html{
 body{
 	background-color:#aaa;
 	font-family:'Permanent Marker','Helvetica Neue',Arial,sans-serif;
-	
 }
 
 .content-inner{
@@ -166,7 +169,6 @@ header p{
 /* ABOUT SECTION */
 /*******************/
 #about{
-	
 	background-color: white;
 	font-size:14px;
 	color:#000;
@@ -218,7 +220,7 @@ header p{
 	border:1px solid #aaa;
 }
 
-.thumb:hover{
+#member .thumb:hover{
 	opacity:1;
 	color:#aaa;
 	box-shadow: 5px 5px 5px #ffffff;
@@ -263,9 +265,10 @@ header p{
 /* GALLERY SECTION*/
 /******************/
 #gallery{
-	background-image:url(../img/bg/scratched2_bw.png);
+	background-color:#fff;
 	color:white;
 	font-size:14px;
+	color:#000;
 }
 #gallery ul{
 	display:flex;
@@ -276,20 +279,35 @@ header p{
 }
 #gallery ul li a{
 	display: block;
+	xcolor:white;
+}
+
+#gallery a{
 	color:white;
 }
 
+#galler h2,
+#gallery a:hover{
+	color:#aaa;
+}
 #gallery_main_container{
 	font-size:14px;
 	color:white;
 }
 
+#gallery .thumb:hover{
+	opacity:1;
+	color:#aaa;
+	box-shadow: 5px 5px 5px #aaa;
+	transition: box-shadow 0.5s;
+	-webkit-transition: box-shadow 0.5s;
+}
 
 /*****************/
 /* MUSIC SECTION */
 /*****************/
 #music{
-	background-color:#fff;
+	background-image:url(../img/westland/room/Ejector-Seat-34.jpg);
 	font-size:14px;
 
 }
@@ -312,7 +330,8 @@ header p{
 /* VIDEO SECTION */
 /*****************/
 #video{
-	background-image:url(../img/westland/room/Ejector-Seat-34.jpg);
+	background-image:url(../img/bg/scratched2_bw.png);
+	
 	position:relative;
 	width:100%;
 	text-align:center;
