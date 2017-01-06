@@ -303,6 +303,57 @@ header p{
 	-webkit-transition: box-shadow 0.5s;
 }
 
+#gallery .thumb{
+	padding:2em;
+}
+
+#gallery .fa-camera:hover,
+#gallery .fa-camera-retro:hover,
+#gallery .fa-paint-brush:hover{
+	transform:rotate(90deg);
+}
+
+
+/*********************/
+/* GALLERY SUB PAGE */
+/*********************/
+
+#gallery_live,
+#gallery_studio,
+#gallery_artwork{
+	padding:5em 0 5em 0;
+}
+
+#gallery_live{
+	background-image:url(../img/westland/room/Ejector-Seat-34.jpg);
+}
+#gallery_studio{
+	xbackground-image:url(../img/bg/scratched2_bw.png);
+	background-color: #aaa;
+	color:white;
+}
+#gallery_artwork{
+	background-image:url(../img/bg/scratched2_bw.png);
+	color:white;
+}
+
+.galleries ul{
+	xdisplay:flex;
+}
+.galleries li{
+	xlist-style-type: none;
+	xflex:1;
+}
+.galleries a{
+	xcolor: white;
+}
+.galleries .fa-2x,
+.galleries .glyphicon-chevron-left,
+.galleries .glyphicon-chevron-right,
+.galleries .carousel-caption{
+	color:#f10000;
+}
+
 /*****************/
 /* MUSIC SECTION */
 /*****************/

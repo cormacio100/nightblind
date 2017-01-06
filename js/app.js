@@ -43,6 +43,7 @@ nightBlindApp.run(function($rootScope,$location,$anchorScroll,$routeParams){
 		// update the URL
 		$location.hash($routeParams.scrollTo);
 		// read from the URL and scroll to correct location
+		$anchorScroll.yOffset = 20;
 		$anchorScroll();
 	});
 });
