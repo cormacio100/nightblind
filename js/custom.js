@@ -35,7 +35,7 @@ var hideMembers = function defaultHide(obj){
 // on page load
 $(function(){
 
-	//console.log('page loaded');
+	console.log('page loaded');
 
 	/**
 		LINK ANIMATION - NOT WORKING

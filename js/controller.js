@@ -30,9 +30,120 @@ SectionControllers.controller('NavController',['$scope','$http',function($scope,
 		];
 }]);
 
-SectionControllers.controller('MemberController',['$scope','$http',function($scope,$location,$anchorScroll){
 
-}]);
+SectionControllers.service('memberService',function($http){
+	this.getData = function(){
+		return $http.get('js/data.json');
+	};
+});
+
+SectionControllers.service('MemberService',function($http,$q){
+
+	var deferred = $q.defer();
+	$http.get('data.json').then(function(data){
+		deferred.resolve(data);
+	});
+
+	this.getData = function(){
+		return deferred.promise;
+	}
+	// object contains data retrieved from the JSON file
+	/*var MemberAPIService = {
+		// function submits a GET request and returns response data
+		retrieveMembers: function(url){
+			return $http.get(url);
+		}*/
+
+	/*this.getData = function(url){
+			return $http.get(url);
+	}*/
+
+//};
+
+	// data gets retunred to the calling function
+	//return MemberAPIService;
+});
+
+SectionControllers.factory('MemberFactory',function(){
+	var members = [ 
+		{
+			"shortname":"Cormac_Liston",
+			"name": "Cormac Liston",
+			"instrument": "Guitar / Vocals",
+			"gear": "Fender Blacktop Stratocaster HH, Epiphone Les Paul - Zakk Wylde Custom, Vox AC30 VR"
+		},
+		{
+			"shortname":"Hugh_OConnor",
+			"name": "Hugh O'Connor",
+			"instrument": "Guitar / Vocals",
+			"gear": "Fender Stratocaster, Vox AC30 VR"
+		},
+		{
+			"shortname":"Davy_Dwyer",
+			"name": "Davy Dwyer",
+			"instrument": "Drums",
+			"gear": "Peavy, Paiste - Nicko McBrain Custom"
+		},
+		{
+			"shortname":"Freek_Vermeer",
+			"name": "Freek Vermeer",
+			"instrument": "Bass",
+			"gear": "Fender Jazz Bass, Trace Elliot GP12"
+		}
+	];
+
+	// create empty factory object
+	var factory = {};
+	factory.getMembers = function(){
+		// return members array to factory object
+		return members;
+	};
+
+	// return the object
+	return factory; 
+});
+
+
+SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
+
+	var retrieveData = function(url,shortname){
+		var memberArr= [];
+		memberArr = MemberFactory.getMembers();
+
+		//console.log(memberArr);
+		$.each(memberArr,function(index,value){
+
+			//console.log('shortname is '+shortname);
+
+	    	if(value.shortname==shortname){
+
+	    		console.log('name is '+value.name);
+	    		console.log('instrument is '+value.instrument);
+	    		console.log('gear is '+value.gear);
+	    		$scope.name = value.name;
+	    		$scope.instrument = value.instrument;
+	    		$scope.gear = value.gear;
+	    	}	
+	    })
+	}
+
+	// location of data to be retrieved
+	var url='js/data.json';
+	// wait for a band member name to be clicked before sending request to API Service
+	$('#cormacThumb').click(function(){
+		retrieveData(url,'Cormac_Liston');
+	});
+	$('#hughThumb').click(function(){
+		retrieveData(url,'Hugh_OConnor');
+	});
+	$('#davyThumb').click(function(){
+		retrieveData(url,'Davy_Dwyer');
+	});
+	$('#freekThumb').click(function(){
+		retrieveData(url,'Freek_Vermeer');
+	});
+
+});
 
 
 SectionControllers.controller('GalleryController',function($scope,$location){

@@ -16,7 +16,7 @@ var nightBlindApp = angular.module('nightBlindApp',[
 	//'VideoDirective',
 	//'ContactDirective',
 	//'ui.bootstrap.modal',
-	//'MemberService'
+	'MemberService'
 	]);
 
 // define Routes

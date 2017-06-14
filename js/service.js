@@ -1,8 +1,9 @@
-angular.module('MemberService',[])
-	.factory('MemberAPIService',function($http){
+var MemberService = angular.module('MemberService',[]);
+
+MemberService.factory('MemberAPIService',function($http){
 
 			// object contains data retrieved from the JSON file
-			MemberAPIService = {
+			var MemberAPIService = {
 				// function submits a GET request and returns response data
 				retrieveMembers: function(url){
 					return $http.get(url);
