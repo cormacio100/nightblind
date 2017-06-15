@@ -1,21 +1,23 @@
-// define the CONTROLLERS for a specific module
+// define the CONTROLLERS for a specific module. 
+//	IN THIS CASE THE MODULE IS CALLED "nightBlindApp"
 
 // Parameters
 //	-	$scope - default
 //	-	$location - used for routing
-//  -   using thise example I am setting variables globally
+//  -   using this example I am setting variables globally
 //  	- 	https://jsfiddle.net/brettdewoody/y65G5/
 
-// Controller to build the NAVIGATION
+// CREATE AN ARRAY OF CONTROLLERS
 var SectionControllers = angular.module('SectionControllers',[]);
 
+//	ADD A CONTROLLER TO THE ARRAY
 SectionControllers.controller('MainController',function($scope,$location,$anchorScroll,$routeParams){
 	var vm = this;
 });
 
 SectionControllers.controller('NavController',['$scope','$http',function($scope,$location,$anchorScroll){
 
-	console.log('this is the NaveController');
+	console.log('this is the NavController');
 
 	// this is a NESTED Controller
 	//var vm = this;
@@ -30,42 +32,8 @@ SectionControllers.controller('NavController',['$scope','$http',function($scope,
 		];
 }]);
 
-
-SectionControllers.service('memberService',function($http){
-	this.getData = function(){
-		return $http.get('js/data.json');
-	};
-});
-
-SectionControllers.service('MemberService',function($http,$q){
-
-	var deferred = $q.defer();
-	$http.get('data.json').then(function(data){
-		deferred.resolve(data);
-	});
-
-	this.getData = function(){
-		return deferred.promise;
-	}
-	// object contains data retrieved from the JSON file
-	/*var MemberAPIService = {
-		// function submits a GET request and returns response data
-		retrieveMembers: function(url){
-			return $http.get(url);
-		}*/
-
-	/*this.getData = function(url){
-			return $http.get(url);
-	}*/
-
-//};
-
-	// data gets retunred to the calling function
-	//return MemberAPIService;
-});
-
 SectionControllers.factory('MemberFactory',function(){
-	var members = [ 
+	var members = [
 		{
 			"shortname":"Cormac_Liston",
 			"name": "Cormac Liston",
@@ -95,26 +63,24 @@ SectionControllers.factory('MemberFactory',function(){
 	// create empty factory object
 	var factory = {};
 	factory.getMembers = function(){
-		// return members array to factory object
+		//	return members to factory object
 		return members;
-	};
+	}
+	return factory;
 
-	// return the object
-	return factory; 
 });
 
-
+/**
+*	THIS IS THE CONTROLLER THAT DOESN'T WORK
+*	WHICH SERVICE DOES IT NEED TO CALL
+*/
 SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
 
 	var retrieveData = function(url,shortname){
 		var memberArr= [];
 		memberArr = MemberFactory.getMembers();
-
 		//console.log(memberArr);
 		$.each(memberArr,function(index,value){
-
-			//console.log('shortname is '+shortname);
-
 	    	if(value.shortname==shortname){
 
 	    		console.log('name is '+value.name);
