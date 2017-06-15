@@ -1,4 +1,4 @@
-SectionControllers.factory('MemberFactory',function(){
+SectionControllers.factory('MemberFactory',function($http){
     var members = [
         {
             "shortname":"Cormac_Liston",
@@ -26,9 +26,20 @@ SectionControllers.factory('MemberFactory',function(){
         }
     ];
 
+    // location of data to be retrieved
+    var url='js/data.json';
     // create empty factory object
     var factory = {};
     factory.getMembers = function(){
+        /*
+        $.getJSON(url,function(data){
+            return data;
+        });
+
+        $http.get(url).then(function(data) {
+            console.log('success');
+            return data;
+        });*/
         //	return members to factory object
         return members;
     }

@@ -35,7 +35,7 @@ SectionControllers.controller('NavController',['$scope','$http',function($scope,
 */
 SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
 
-	var retrieveData = function(url,shortname){
+	var retrieveData = function(shortname){
 		var memberArr= [];
 		memberArr = MemberFactory.getMembers();
         console.log('memberArr is: ');
@@ -52,20 +52,19 @@ SectionControllers.controller('MemberController',function($scope,$http,MemberFac
 	    	}	
 	    })
 	}
-	// location of data to be retrieved
-	var url='js/data.json';
+
 	// wait for a band member name to be clicked before sending request to API Service
 	$('#cormacThumb').click(function(){
-		retrieveData(url,'Cormac_Liston');
+		retrieveData('Cormac_Liston');
 	});
 	$('#hughThumb').click(function(){
-		retrieveData(url,'Hugh_OConnor');
+		retrieveData('Hugh_OConnor');
 	});
 	$('#davyThumb').click(function(){
-		retrieveData(url,'Davy_Dwyer');
+		retrieveData('Davy_Dwyer');
 	});
 	$('#freekThumb').click(function(){
-		retrieveData(url,'Freek_Vermeer');
+		retrieveData('Freek_Vermeer');
 	});
 });
 
