@@ -5,7 +5,7 @@ Fix the section on members using a controller/service
 	-	Data is displaying in the console but not in the correct section
 		-	Data is being retrieved from a factory but the data is hard coded. Need to at least read in from a JSON file
 
-Add new EP to the music section and remove radio broadcast
+
 
 Find why the Gallery link does not link the same as the Members link
 
@@ -15,14 +15,16 @@ Build contact form (with validation that is initially hidden:
 	The site should contain the ability to check on the band’s availability for future bookings and costs associated with various types of booking. To do this the band would like you to create a contact form which will take all of the details, such as, name, email, date, event type. Based on this data, the site will inform the user whether or not the date is available and the cost estimate for the event
 	-	Response should display from a json file. Differnt price per day of the week
 	
-	
-
 Add Bootstrap flexibility for responsiveness
 
 Document testing
 
-Create a README file
+
 
 -----------------------------------------------------------------------------------
 
 Some of the images in the gallery section have white borders. Fix that	-	DONE
+
+Create a README file-	done
+
+Add new EP to the music section and remove radio broadcast - done
