@@ -2,12 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43813dd5-9e15-46e0-a596-491292d6a895" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/index.html" afterPath="$PROJECT_DIR$/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/app.js" afterPath="$PROJECT_DIR$/js/app.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller.js" afterPath="$PROJECT_DIR$/js/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/service.js" afterPath="$PROJECT_DIR$/js/service.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/member-partial.html" afterPath="$PROJECT_DIR$/partials/directives/member-partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-do.txt" afterPath="$PROJECT_DIR$/to-do.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/factory.js" afterPath="$PROJECT_DIR$/js/factory.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/global_vars.js" afterPath="$PROJECT_DIR$/js/global_vars.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -32,12 +30,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="factory.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="factory.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/factory.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
+              <caret line="0" column="53" lean-forward="false" selection-start-line="0" selection-start-column="53" selection-end-line="0" selection-end-column="53" />
+              <folding>
+                <element signature="e#53#1098#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -54,13 +54,14 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-502">
-              <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+            <state relative-caret-position="590">
+              <caret line="68" column="7" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
+                <element signature="e#543#988#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -70,7 +71,7 @@
         <entry file="file://$PROJECT_DIR$/js/global_vars.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="17">
-              <caret line="1" column="65" lean-forward="true" selection-start-line="1" selection-start-column="65" selection-end-line="1" selection-end-column="65" />
+              <caret line="1" column="40" lean-forward="true" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
               <folding />
             </state>
           </provider>
@@ -98,8 +99,9 @@
       <list>
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/js/controller.js" />
         <option value="$PROJECT_DIR$/js/factory.js" />
+        <option value="$PROJECT_DIR$/js/global_vars.js" />
+        <option value="$PROJECT_DIR$/js/controller.js" />
       </list>
     </option>
   </component>
@@ -191,12 +193,12 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1497537632187</updated>
-      <workItem from="1497537637184" duration="1735000" />
+      <workItem from="1497537637184" duration="2636000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="1735000" />
+    <option name="totallyTimeSpent" value="2636000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="332" y="20" width="1024" height="688" extended-state="0" />
@@ -258,14 +260,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/global_vars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="17">
-          <caret line="1" column="65" lean-forward="true" selection-start-line="1" selection-start-column="65" selection-end-line="1" selection-end-column="65" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="320">
@@ -284,20 +278,31 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/factory.js">
+    <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        <state relative-caret-position="590">
+          <caret line="68" column="7" lean-forward="false" selection-start-line="68" selection-start-column="7" selection-end-line="68" selection-end-column="7" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#543#988#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/global_vars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="1" column="40" lean-forward="true" selection-start-line="1" selection-start-column="40" selection-end-line="1" selection-end-column="40" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller.js">
+    <entry file="file://$PROJECT_DIR$/js/factory.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-502">
-          <caret line="33" column="0" lean-forward="false" selection-start-line="33" selection-start-column="0" selection-end-line="33" selection-end-column="0" />
+        <state relative-caret-position="0">
+          <caret line="0" column="53" lean-forward="false" selection-start-line="0" selection-start-column="53" selection-end-line="0" selection-end-column="53" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="e#53#1098#0" expanded="false" />
           </folding>
         </state>
       </provider>

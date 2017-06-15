@@ -7,9 +7,6 @@
 //  -   using this example I am setting variables globally
 //  	- 	https://jsfiddle.net/brettdewoody/y65G5/
 
-// CREATE AN ARRAY OF CONTROLLERS
-var SectionControllers = angular.module('SectionControllers',[]);
-
 //	ADD A CONTROLLER TO THE ARRAY
 SectionControllers.controller('MainController',function($scope,$location,$anchorScroll,$routeParams){
 	var vm = this;
@@ -32,46 +29,8 @@ SectionControllers.controller('NavController',['$scope','$http',function($scope,
 		];
 }]);
 
-SectionControllers.factory('MemberFactory',function(){
-	var members = [
-		{
-			"shortname":"Cormac_Liston",
-			"name": "Cormac Liston",
-			"instrument": "Guitar / Vocals",
-			"gear": "Fender Blacktop Stratocaster HH, Epiphone Les Paul - Zakk Wylde Custom, Vox AC30 VR"
-		},
-		{
-			"shortname":"Hugh_OConnor",
-			"name": "Hugh O'Connor",
-			"instrument": "Guitar / Vocals",
-			"gear": "Fender Stratocaster, Vox AC30 VR"
-		},
-		{
-			"shortname":"Davy_Dwyer",
-			"name": "Davy Dwyer",
-			"instrument": "Drums",
-			"gear": "Peavy, Paiste - Nicko McBrain Custom"
-		},
-		{
-			"shortname":"Freek_Vermeer",
-			"name": "Freek Vermeer",
-			"instrument": "Bass",
-			"gear": "Fender Jazz Bass, Trace Elliot GP12"
-		}
-	];
-
-	// create empty factory object
-	var factory = {};
-	factory.getMembers = function(){
-		//	return members to factory object
-		return members;
-	}
-	return factory;
-
-});
-
 /**
-*	THIS IS THE CONTROLLER THAT DOESN'T WORK
+*	THIS IS THE CONTROLLER THAT DOESN'T FULLY WORK
 *	WHICH SERVICE DOES IT NEED TO CALL
 */
 SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
@@ -79,7 +38,8 @@ SectionControllers.controller('MemberController',function($scope,$http,MemberFac
 	var retrieveData = function(url,shortname){
 		var memberArr= [];
 		memberArr = MemberFactory.getMembers();
-		//console.log(memberArr);
+        console.log('memberArr is: ');
+		console.log(memberArr);
 		$.each(memberArr,function(index,value){
 	    	if(value.shortname==shortname){
 
@@ -92,7 +52,6 @@ SectionControllers.controller('MemberController',function($scope,$http,MemberFac
 	    	}	
 	    })
 	}
-
 	// location of data to be retrieved
 	var url='js/data.json';
 	// wait for a band member name to be clicked before sending request to API Service
@@ -108,7 +67,6 @@ SectionControllers.controller('MemberController',function($scope,$http,MemberFac
 	$('#freekThumb').click(function(){
 		retrieveData(url,'Freek_Vermeer');
 	});
-
 });
 
 
