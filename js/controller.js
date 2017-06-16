@@ -21,28 +21,10 @@ SectionControllers.controller('NavController',['$scope','$http',function($scope,
 *	WHICH SERVICE DOES IT NEED TO CALL
 */
 SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
-
-
-		var memberArr= [];
-		memberArr = MemberFactory.getMembers();
-
-		$scope.memberArr = memberArr;
-
-
-    /*var retrieveData = function(shortname){
-    	console.log('short name:'+shortname);
-		$.each(memberArr,function(index,value){
-	    	if(value.shortname==shortname){
-
-	    		console.log('name is '+value.name);
-	    		console.log('instrument is '+value.instrument);
-	    		console.log('gear is '+value.gear);
-	    		$scope.name = value.name;
-	    		$scope.instrument = value.instrument;
-	    		$scope.gear = value.gear;
-	    	}
-	    })
-	};*/
+	var memberArr= [];
+	memberArr = MemberFactory.getMembers();
+	//	all band members data loaded. They will initially be hidden
+	$scope.memberArr = memberArr;
 
 	//	initial counters
 	var currentlyShown = 'none';
@@ -51,29 +33,43 @@ SectionControllers.controller('MemberController',function($scope,$http,MemberFac
     var davyClickCount = 0;
     var freekClickCount = 0;
 
-	//	when the thumb is clicked
-	//	check that the button's click counter is at 0
-	//	If yes then:
-		//	check if anything else is currently shown
-		//	if no
-			// 	then the div is displayed
-			//	the currently shown var is updated
-			//	Increment the counter for the div
-		//	else if yes
-		//	If something is currently being shown then it is toggled off
-
-		//	Then the clicked button's div gets shown
-		//
-		//	Clear the counters for the other buttons
-	//	If no then:
-		//	nothing happens
-		//	currentlyShown = none
-
-	// wait for a band member name to be clicked before sending request to API Service
-	$('#cormacThumb').on('click',function(){
-		console.log('shown:'+currentlyShown + ' count:'+cormacClickCount);
-        var details = '#cormac_details';
-        if(cormacClickCount==0){
+	//	function resets the click counters
+	var setCounters = function(details){
+        if('#cormac_details' == details){
+            cormacClickCount++;
+            hughClickCount = 0;
+            davyClickCount = 0;
+            freekClickCount = 0;
+        }else if('#hugh_details' == details){
+            cormacClickCount = 0;
+            hughClickCount++;
+            davyClickCount = 0;
+            freekClickCount = 0;
+        }else if('#davy_details' == details){
+            cormacClickCount = 0;
+            hughClickCount = 0;
+            davyClickCount++;
+            freekClickCount = 0;
+        }else if('#freek_details' == details){
+            cormacClickCount = 0;
+            hughClickCount = 0;
+            davyClickCount = 0;
+            freekClickCount++;
+        }
+	}
+	//	Function will toggle the relevant div depending on band member clicked
+	var toggleFunc = function(details){
+		var currentClickCount = 0;
+		if('#cormac_details' == details){
+            currentClickCount = cormacClickCount
+		}else if('#hugh_details' == details){
+            currentClickCount = hughClickCount
+        }else if('#davy_details' == details){
+            currentClickCount = davyClickCount
+        }else if('#freek_details' == details){
+            currentClickCount = freekClickCount
+        }
+        if(currentClickCount == 0){
             console.log(currentlyShown);
             if('none'!=currentlyShown){
                 $(currentlyShown).slideToggle();
@@ -81,54 +77,38 @@ SectionControllers.controller('MemberController',function($scope,$http,MemberFac
             $(details).slideToggle();
             currentlyShown = details;
             //	increment count for the div
-            cormacClickCount++;
-            // set the other counters back to zero
-            hughClickCount = 0;
-            davyClickCount = 0;
-            freekClickCount = 0;
-		}else{
+			setCounters(details);
+
+        }else{
             $(currentlyShown).slideToggle();
-            cormacClickCount =0;
+            if('#cormac_details' == details){
+            	cormacClickCount = 0;
+            }else if('#hugh_details' == details){
+                hughClickCount = 0;
+            }else if('#davy_details' == details){
+                davyClickCount = 0;
+            }else if('#freek_details' == details){
+                freekClickCount = 0;
+            }
             currentlyShown = 'none';
-		}
+        }
+	}
+	// wait for a band member name to be clicked
+	$('#cormacThumb').on('click',function(){
+        var details = '#cormac_details';
+        toggleFunc(details);
 	});
 	$('#hughThumb').click(function(){
         var details = '#hugh_details';
-        console.log(currentlyShown);
-        if(hughClickCount==0) {
-            if ('none' != currentlyShown) {
-                $(currentlyShown).slideToggle();
-            }
-
-            $(details).slideToggle();
-            currentlyShown = details;
-            hughClickCount++;
-            cormacClickCount = 0;
-            davyClickCount = 0;
-            freekClickCount = 0;
-        }else{
-            $(currentlyShown).slideToggle();
-            hughClickCount =0;
-            currentlyShown = 'none';
-		}
+        toggleFunc(details);
 	});
 	$('#davyThumb').click(function(){
         var details = '#davy_details';
-        console.log(currentlyShown);
-        if('none'!=currentlyShown){
-            $(currentlyShown).slideToggle();
-        }
-        $(details).slideToggle();
-        currentlyShown = details;
+        toggleFunc(details);
 	});
 	$('#freekThumb').click(function(){
         var details = '#freek_details';
-        console.log(currentlyShown);
-        if('none'!=currentlyShown){
-            $(currentlyShown).slideToggle();
-        }
-        $(details).slideToggle();
-        currentlyShown = details;
+        toggleFunc(details);
 	});
 });
 
