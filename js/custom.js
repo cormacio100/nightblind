@@ -1,6 +1,20 @@
 
+
+var hideMemberDivs = function(whichMember){
+	console.log('hiding members');
+    var hideArr=['cormac','hugh','davy','freek'];
+    // hide divs
+
+        console.log('hiding all');
+
+
+    console.log('hidden all');
+
+};
+
+
 // function hides details of band members
-var hideMembers = function defaultHide(obj){
+var hideMembers = function(obj){
 
 	console.log('object name is '+obj.name);
 
@@ -10,32 +24,69 @@ var hideMembers = function defaultHide(obj){
 
 	// build the relavant array for hiding divs
 	if('allMembers' == name){
+		console.log('all hidden');
 		hideArr=['cormac','hugh','davy','freek'];
 	}else if('cormac' == name){
+        console.log('show cormac');
 		hideArr=['hugh','davy','freek'];
 	}else if('hugh' == name){
+        console.log('show hugh');
 		hideArr=['cormac','davy','freek'];
 	}else if('davy' == name){
+        console.log('show davy');
 		hideArr=['cormac','hugh','freek'];
 	}else if('freek' == name){
+        console.log('show freek');
 		hideArr=['cormac','hugh','davy'];
 	}
 
 	// hide divs
 	$.each(hideArr,function(index,value){
 
-		var hideDiv = '#'+value+'_details';
+		var hideDiv = value+'_details';
 
 		console.log('hide div '+hideDiv);
 
-		$(hideDiv).hide();
+		$('#'+hideDiv).hide();
 	});
 };
 
 // on page load
-$(function(){
-
+$(document).ready(function(){
 	console.log('page loaded');
+
+
+    //$('#member_details').hide();
+
+    //hideMemberDivs('all');
+    //$('#cormac_details').hide();
+    //$('#hugh_details').hide();
+    //$('#davy_details').hide();
+    //$('#freek_details').hide();
+
+    //$( "#accordion" ).accordion();
+
+   /* $('#cormacThumb').click(function(){
+
+        console.log('cormac clicked')
+        //this.name='cormac';
+
+        // need to hide relevant divs for other members
+        //hideMembers(this);
+        //$('#cormac').slideToggle();
+        $('#cormac').hide();
+    });*/
+
+
+	/*
+	* When page loads - hide all members
+	* When a thumb is clicked display details for that member.
+	* 	-	Add the member name to an array or variable
+	* When another thumb is clicked check the variable and hide the old member. Show the new.
+		* When thumb is clicked again, toggle the members visibility
+	*
+	*
+	* */
 
 	/**
 		LINK ANIMATION - NOT WORKING
@@ -49,15 +100,13 @@ $(function(){
 			scrollTop: $($.attr(this,'href')).offset().top
 		},500);
 	});*/
-
-
 /**
 DISPLAY of MEMBERS
 **/
-	var obj = {
+	/*var obj = {
 		name:'allMembers'
-	};
-	hideMembers(obj);
+	};*/
+
 
 	/*$('#members').click(function{
 		this.name='allMembers';
@@ -65,6 +114,7 @@ DISPLAY of MEMBERS
 		$('#cormac').slideToggle();
 	});*/
 
+	/*
 	$('#cormacThumb').click(function(){
 
 		console.log('cormac clicked')
@@ -90,5 +140,5 @@ DISPLAY of MEMBERS
 		hideMembers(this);
 		$('#freek').slideToggle();
 	});
-
+*/
 });

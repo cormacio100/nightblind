@@ -13,20 +13,7 @@ SectionControllers.controller('MainController',function($scope,$location,$anchor
 });
 
 SectionControllers.controller('NavController',['$scope','$http',function($scope,$location,$anchorScroll){
-
-	console.log('this is the NavController');
-
-	// this is a NESTED Controller
-	//var vm = this;
-	$scope.links = [
-			{title:'Home',href:'home'},
-			{title:'About',href:'home?scrollTo=about'},
-			{title:'Members',href:'home?scrollTo=member'},
-			{title:'Gallery',href:'home?scrollTo=gallery'},
-			{title:'Music',href:'home?scrollTo=music'},
-			{title:'Video',href:'home?scrollTo=video'},
-			{title:'Contact',href:'home?scrollTo=contact'},
-		];
+	$scope.links = links;
 }]);
 
 /**
@@ -35,11 +22,15 @@ SectionControllers.controller('NavController',['$scope','$http',function($scope,
 */
 SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
 
-	var retrieveData = function(shortname){
+
 		var memberArr= [];
 		memberArr = MemberFactory.getMembers();
-        console.log('memberArr is: ');
-		console.log(memberArr);
+
+		$scope.memberArr = memberArr;
+
+
+    /*var retrieveData = function(shortname){
+    	console.log('short name:'+shortname);
 		$.each(memberArr,function(index,value){
 	    	if(value.shortname==shortname){
 
@@ -49,22 +40,95 @@ SectionControllers.controller('MemberController',function($scope,$http,MemberFac
 	    		$scope.name = value.name;
 	    		$scope.instrument = value.instrument;
 	    		$scope.gear = value.gear;
-	    	}	
+	    	}
 	    })
-	}
+	};*/
+
+	//	initial counters
+	var currentlyShown = 'none';
+	var cormacClickCount = 0;
+    var hughClickCount = 0;
+    var davyClickCount = 0;
+    var freekClickCount = 0;
+
+	//	when the thumb is clicked
+	//	check that the button's click counter is at 0
+	//	If yes then:
+		//	check if anything else is currently shown
+		//	if no
+			// 	then the div is displayed
+			//	the currently shown var is updated
+			//	Increment the counter for the div
+		//	else if yes
+		//	If something is currently being shown then it is toggled off
+
+		//	Then the clicked button's div gets shown
+		//
+		//	Clear the counters for the other buttons
+	//	If no then:
+		//	nothing happens
+		//	currentlyShown = none
 
 	// wait for a band member name to be clicked before sending request to API Service
-	$('#cormacThumb').click(function(){
-		retrieveData('Cormac_Liston');
+	$('#cormacThumb').on('click',function(){
+		console.log('shown:'+currentlyShown + ' count:'+cormacClickCount);
+        var details = '#cormac_details';
+        if(cormacClickCount==0){
+            console.log(currentlyShown);
+            if('none'!=currentlyShown){
+                $(currentlyShown).slideToggle();
+            }
+            $(details).slideToggle();
+            currentlyShown = details;
+            //	increment count for the div
+            cormacClickCount++;
+            // set the other counters back to zero
+            hughClickCount = 0;
+            davyClickCount = 0;
+            freekClickCount = 0;
+		}else{
+            $(currentlyShown).slideToggle();
+            cormacClickCount =0;
+            currentlyShown = 'none';
+		}
 	});
 	$('#hughThumb').click(function(){
-		retrieveData('Hugh_OConnor');
+        var details = '#hugh_details';
+        console.log(currentlyShown);
+        if(hughClickCount==0) {
+            if ('none' != currentlyShown) {
+                $(currentlyShown).slideToggle();
+            }
+
+            $(details).slideToggle();
+            currentlyShown = details;
+            hughClickCount++;
+            cormacClickCount = 0;
+            davyClickCount = 0;
+            freekClickCount = 0;
+        }else{
+            $(currentlyShown).slideToggle();
+            hughClickCount =0;
+            currentlyShown = 'none';
+		}
 	});
 	$('#davyThumb').click(function(){
-		retrieveData('Davy_Dwyer');
+        var details = '#davy_details';
+        console.log(currentlyShown);
+        if('none'!=currentlyShown){
+            $(currentlyShown).slideToggle();
+        }
+        $(details).slideToggle();
+        currentlyShown = details;
 	});
 	$('#freekThumb').click(function(){
-		retrieveData('Freek_Vermeer');
+        var details = '#freek_details';
+        console.log(currentlyShown);
+        if('none'!=currentlyShown){
+            $(currentlyShown).slideToggle();
+        }
+        $(details).slideToggle();
+        currentlyShown = details;
 	});
 });
 
