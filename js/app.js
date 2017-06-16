@@ -1,9 +1,12 @@
-// create new MODULE
-// We are declarng the module that the HTML states it will use with the statement
+// CREATE NEW MODULE
+// We are declaring the module that the HTML states it will use with the statement
 //	-	<html ng-app="nightBlindApp">
 // Uses Dependency Injection
 // 	- 	ngRoute allows us to route by using $routeProvider module
 //	-	RouteControllers are the controllers we call when we hit a specific URL 
+
+//	DECLARE APP AND DECLARE MODULES
+//	EACH MODULE WILL HAVE IT'S OWN CONTROLLERS
 var nightBlindApp = angular.module('nightBlindApp',[
 	//'ngRoute',
 	'SectionControllers',
@@ -16,7 +19,7 @@ var nightBlindApp = angular.module('nightBlindApp',[
 	//'VideoDirective',
 	//'ContactDirective',
 	//'ui.bootstrap.modal',
-	'MemberService'
+	//'MemberService'
 	]);
 
 // define Routes

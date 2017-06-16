@@ -1,4 +1,4 @@
-<section id="member" >
+<section id="member">
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-12 text-center">
@@ -7,7 +7,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="container" ng-controller="MemberController">
+	<div class="container" >
 		<div class="row">
 			<div class="col-lg-3 col-md-6 text-center">
 				<a href="">
@@ -31,8 +31,10 @@
 			</div>
 			<div class="col-lg-3 col-md-6 text-center">
 				<a href="">
-					<div class="thumb" id="davyThumb">	
-						<i class="fa fa-4x fa-caret-square-o-up" aria-hidden="true"></i>
+					<div class="thumb" id="davyThumb">
+						<!--<button type="button" class="btn btn-info" data-toggle="collapse" data-target="#davy_details">-->
+							<i class="fa fa-4x fa-caret-square-o-up" aria-hidden="true"></i>
+						<!--</button>-->
 						<!--<i class="fa fa-4x fa-thermometer-3 text-primary sr-icons" data-sr-id="4"></i>-->
 						<h3>Davy</h3>
 					</div>
@@ -48,20 +50,39 @@
 				</a>
 			</div>
 		</div>
-		<div class="row">
+		<!--<div class="row" ng-controller="MemberController">
 			<div class="col-lg-12 col-md-12 text-center" id="member_details">
+				<h1>Member</h1>
+				<div data-ng-repeat="member in memberArr" id="{{member.id}}_details" ng-hide="cormacThumb">
+					<h2>Name: {{ member.name }}</h2>
+					<h3>Instrument: {{ member.instrument}}</h3>
+					<h3>Gear: {{ member.gear}}</h3>
+				</div>
+
 				<!--<ul>
 					<li ng-repeat="member in members">
 						<h2>{{ member.name }}</h2>
 						<h3>{{ member.instrument}}</h3>
 					</li>
-				</ul>-->
+				</ul>
 				<h1>Member</h1>
 				<h2>{{ name }}</h2>
 				<h3>{{ instrument }}</h3>
-				<h3>{{ gear }}</h3>
+				<h3>{{ gear }}</h3>-
 			</div>
-
+		</div>-->
+		<div class="row" ng-controller="MemberController" >
+			<div data-ng-repeat="member in memberArr" id="{{member.id}}_details" class="collapse">
+				<h3>{{ member.name }}</h3>
+				<div>
+					<p>
+						<h2>Name: {{ member.name }}</h2>
+						<h3>Instrument: {{ member.instrument}}</h3>
+						<h3>Gear: {{ member.gear}}</h3>
+					</p>
+				</div>
+			</div>
+		</div>
 			<!--
 			<div class="col-lg-12 col-md-12 text-center" id="cormac_details">
 				<h2>Cormac Liston</h2>

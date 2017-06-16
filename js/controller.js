@@ -1,148 +1,115 @@
-// define the CONTROLLERS for a specific module
+// define the CONTROLLERS for a specific module. 
+//	IN THIS CASE THE MODULE IS CALLED "nightBlindApp"
 
 // Parameters
 //	-	$scope - default
 //	-	$location - used for routing
-//  -   using thise example I am setting variables globally
+//  -   using this example I am setting variables globally
 //  	- 	https://jsfiddle.net/brettdewoody/y65G5/
 
-// Controller to build the NAVIGATION
-var SectionControllers = angular.module('SectionControllers',[]);
-
+//	ADD A CONTROLLER TO THE ARRAY
 SectionControllers.controller('MainController',function($scope,$location,$anchorScroll,$routeParams){
 	var vm = this;
 });
 
 SectionControllers.controller('NavController',['$scope','$http',function($scope,$location,$anchorScroll){
-
-	console.log('this is the NaveController');
-
-	// this is a NESTED Controller
-	//var vm = this;
-	$scope.links = [
-			{title:'Home',href:'home'},
-			{title:'About',href:'home?scrollTo=about'},
-			{title:'Members',href:'home?scrollTo=member'},
-			{title:'Gallery',href:'home?scrollTo=gallery'},
-			{title:'Music',href:'home?scrollTo=music'},
-			{title:'Video',href:'home?scrollTo=video'},
-			{title:'Contact',href:'home?scrollTo=contact'},
-		];
+	$scope.links = links;
 }]);
 
-
-SectionControllers.service('memberService',function($http){
-	this.getData = function(){
-		return $http.get('js/data.json');
-	};
-});
-
-SectionControllers.service('MemberService',function($http,$q){
-
-	var deferred = $q.defer();
-	$http.get('data.json').then(function(data){
-		deferred.resolve(data);
-	});
-
-	this.getData = function(){
-		return deferred.promise;
-	}
-	// object contains data retrieved from the JSON file
-	/*var MemberAPIService = {
-		// function submits a GET request and returns response data
-		retrieveMembers: function(url){
-			return $http.get(url);
-		}*/
-
-	/*this.getData = function(url){
-			return $http.get(url);
-	}*/
-
-//};
-
-	// data gets retunred to the calling function
-	//return MemberAPIService;
-});
-
-SectionControllers.factory('MemberFactory',function(){
-	var members = [ 
-		{
-			"shortname":"Cormac_Liston",
-			"name": "Cormac Liston",
-			"instrument": "Guitar / Vocals",
-			"gear": "Fender Blacktop Stratocaster HH, Epiphone Les Paul - Zakk Wylde Custom, Vox AC30 VR"
-		},
-		{
-			"shortname":"Hugh_OConnor",
-			"name": "Hugh O'Connor",
-			"instrument": "Guitar / Vocals",
-			"gear": "Fender Stratocaster, Vox AC30 VR"
-		},
-		{
-			"shortname":"Davy_Dwyer",
-			"name": "Davy Dwyer",
-			"instrument": "Drums",
-			"gear": "Peavy, Paiste - Nicko McBrain Custom"
-		},
-		{
-			"shortname":"Freek_Vermeer",
-			"name": "Freek Vermeer",
-			"instrument": "Bass",
-			"gear": "Fender Jazz Bass, Trace Elliot GP12"
-		}
-	];
-
-	// create empty factory object
-	var factory = {};
-	factory.getMembers = function(){
-		// return members array to factory object
-		return members;
-	};
-
-	// return the object
-	return factory; 
-});
-
-
+/**
+*	THIS IS THE CONTROLLER THAT DOESN'T FULLY WORK
+*	WHICH SERVICE DOES IT NEED TO CALL
+*/
 SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
+	var memberArr= [];
+	memberArr = MemberFactory.getMembers();
+	//	all band members data loaded. They will initially be hidden
+	$scope.memberArr = memberArr;
 
-	var retrieveData = function(url,shortname){
-		var memberArr= [];
-		memberArr = MemberFactory.getMembers();
+	//	initial counters
+	var currentlyShown = 'none';
+	var cormacClickCount = 0;
+    var hughClickCount = 0;
+    var davyClickCount = 0;
+    var freekClickCount = 0;
 
-		//console.log(memberArr);
-		$.each(memberArr,function(index,value){
-
-			//console.log('shortname is '+shortname);
-
-	    	if(value.shortname==shortname){
-
-	    		console.log('name is '+value.name);
-	    		console.log('instrument is '+value.instrument);
-	    		console.log('gear is '+value.gear);
-	    		$scope.name = value.name;
-	    		$scope.instrument = value.instrument;
-	    		$scope.gear = value.gear;
-	    	}	
-	    })
+	//	function resets the click counters
+	var setCounters = function(details){
+        if('#cormac_details' == details){
+            cormacClickCount++;
+            hughClickCount = 0;
+            davyClickCount = 0;
+            freekClickCount = 0;
+        }else if('#hugh_details' == details){
+            cormacClickCount = 0;
+            hughClickCount++;
+            davyClickCount = 0;
+            freekClickCount = 0;
+        }else if('#davy_details' == details){
+            cormacClickCount = 0;
+            hughClickCount = 0;
+            davyClickCount++;
+            freekClickCount = 0;
+        }else if('#freek_details' == details){
+            cormacClickCount = 0;
+            hughClickCount = 0;
+            davyClickCount = 0;
+            freekClickCount++;
+        }
 	}
+	//	Function will toggle the relevant div depending on band member clicked
+	var toggleFunc = function(details){
+		var currentClickCount = 0;
+		if('#cormac_details' == details){
+            currentClickCount = cormacClickCount
+		}else if('#hugh_details' == details){
+            currentClickCount = hughClickCount
+        }else if('#davy_details' == details){
+            currentClickCount = davyClickCount
+        }else if('#freek_details' == details){
+            currentClickCount = freekClickCount
+        }
+        if(currentClickCount == 0){
+            console.log(currentlyShown);
+            if('none'!=currentlyShown){
+                $(currentlyShown).slideToggle();
+            }
+            $(details).slideToggle();
+            currentlyShown = details;
+            //	increment count for the div
+			setCounters(details);
 
-	// location of data to be retrieved
-	var url='js/data.json';
-	// wait for a band member name to be clicked before sending request to API Service
-	$('#cormacThumb').click(function(){
-		retrieveData(url,'Cormac_Liston');
+        }else{
+            $(currentlyShown).slideToggle();
+            if('#cormac_details' == details){
+            	cormacClickCount = 0;
+            }else if('#hugh_details' == details){
+                hughClickCount = 0;
+            }else if('#davy_details' == details){
+                davyClickCount = 0;
+            }else if('#freek_details' == details){
+                freekClickCount = 0;
+            }
+            currentlyShown = 'none';
+        }
+	}
+	// wait for a band member name to be clicked
+	$('#cormacThumb').on('click',function(){
+        var details = '#cormac_details';
+        toggleFunc(details);
 	});
 	$('#hughThumb').click(function(){
-		retrieveData(url,'Hugh_OConnor');
+        var details = '#hugh_details';
+        toggleFunc(details);
 	});
 	$('#davyThumb').click(function(){
-		retrieveData(url,'Davy_Dwyer');
+        var details = '#davy_details';
+        toggleFunc(details);
 	});
 	$('#freekThumb').click(function(){
-		retrieveData(url,'Freek_Vermeer');
+        var details = '#freek_details';
+        toggleFunc(details);
 	});
-
 });
 
 

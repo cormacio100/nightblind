@@ -202,6 +202,9 @@ header p{
 	xcolor:#aaa;
 }
 
+#member-hide{
+	dipaly:none;
+}
 
 .thumb{
 	xbackground-color:grey;

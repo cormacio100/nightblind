@@ -1,10 +1,24 @@
-Fix the section on members
-
-Add new EP to the music section
-
-Find why the Gallery link does not link the same as the Members link
-
-On Home Section add and image detailing upcoming gigs
-
-Build contact form that is initially hidden:
+Build contact form (with validation that is initially hidden:
 	The site should contain the ability to check on the band’s availability for future bookings and costs associated with various types of booking. To do this the band would like you to create a contact form which will take all of the details, such as, name, email, date, event type. Based on this data, the site will inform the user whether or not the date is available and the cost estimate for the event
+	-	Response should display from a json file. Differnt price per day of the week
+	
+Add Bootstrap flexibility for responsiveness
+
+Document testing
+
+-----------------------------------------------------------------------------------
+
+Data is being retrieved from a factory but the data is hard coded. Need to at least read in from a JSON file - DONE
+
+Some of the images in the gallery section have white borders. Fix that	-	DONE
+
+Create a README file-	done
+
+Add new EP to the music section and remove radio broadcast - done
+
+On Home Section add an image detailing upcoming gigs  - done 
+
+Find why the Gallery link does not link the same as the Members link - done
+
+Fix the section on members using a controller/factory
+	-	Data is displaying in the console but not in the correct section - done
