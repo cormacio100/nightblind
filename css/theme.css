@@ -433,3 +433,6 @@ header p{
 #contact_send_btn:hover{
 	color: #f10000;
 }
+.form_error{
+	color:#aaa;
+}

@@ -4,9 +4,69 @@
 			<div class="col-lg-8 col-lg-offset-2 text-center" >
 				<h2 class="section-heading">Contact The Band</h2>
 				<hr class="primary">
-				<p id="contact-info">
-					Want to book us for a show? Give us a call or send us an email and we will get back to you as soon as possible!
-				</p>	
+				<p id="contact-info">Want to book us for a show? Give us a call or send us an email and we will get back to you as soon as possible!</p>
+				<form name="contact_quote_form" id="contact_quote_form">
+					<div class="row">
+						<div class="col-md-2 text-right" >
+							Name:
+							</div>
+						<div class="col-md-4 text-left" >
+							<input type="text" name="name" class="contact_form_element" ng-model="name" required>
+							<br>
+							<span class="form_error" ng-show="contact_quote_form.name.$dirty && contact_quote_form.name.$invalid">
+								<span ng-show="contact_quote_form.name.$error.required">name is required.</span>
+							</span>
+						</div>
+						<div class="col-md-2 text-right" >
+							Email:
+						</div>
+						<div class="col-md-4 text-left" >
+							<input type="email" name="email" class="contact_form_element" ng-model="email" required>
+							<br>
+							<span class="form_error" ng-show="contact_quote_form.email.$error.email">
+								A valid email is required.
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2 text-right" >
+							Gig Date:
+						</div>
+						<div class="col-md-4 text-left" >
+							<input type="date" name="date" class="contact_form_element" ng-model="date" required>
+							<br>
+							<span class="form_error" ng-show="contact_quote_form.date.$dirty && contact_quote_form.date.$invalid">
+								<span ng-show="contact_quote_form.date.$error.required">Enter a valid date</span>
+							</span>
+						</div>
+						<div class="col-md-2 text-right" >
+							Set Length:
+						</div>
+						<div class="col-md-4 text-left" >
+							<select name="set_length" class="contact_form_element" ng-model="event_type" required>
+								<option value=1>1 hour</option>
+								<option value=2>2 hours</option>
+								<option value=3>3 hours</option>
+							</select>
+							<span class="form_error" ng-show="contact_quote_form.event_type.$dirty && contact_quote_form.event_type.$invalid">
+								<span ng-show="contact_quote_form.event_type.$error.required">Enter set length</span>
+							</span>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-2 text-right" >
+							Special Requirements
+						</div>
+						<div class="col-md-10 text-left" >
+							<textarea rows="4" cols="70" class="contact_form_element" ng-model="special_requirement"></textarea>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-12 text-center" >
+							<button id="contact_send_btn" class="btn" ng-disabled="contact_quote_form.$invalid">Send</button>
+						</div>
+					</div>
+				</form>
 			</div>
 		</div>
 		<div class="row" id="contactsRow">

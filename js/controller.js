@@ -181,13 +181,12 @@ SectionControllers.controller('ContactController',function($scope,$location){
 		'</div>' +
 		'</form>' +
         '<p>The inputs valid state is:</p>' +
-    	'<h1>$sce.trustAsHtml({{contact_quote_form.myInput.$invalid}})</h1>' +
+    	'<h1>$sce.trustAsHtml({{contact_quote_form.myInput.$invalid}})</h1>';
+
+	$('#contact_quote_form').hide();
 
     $('#email-request').on('click',function(){
-    	console.log('clicked');
-     	$('#contact-info').fadeOut(1500,function() {
-            $('#contact-info').replaceWith(formString);
-            $('#contact-info').fadeIn(1500);
-        });
+     	$('#contact-info').slideToggle('slow');
+        $('#contact_quote_form').slideToggle('slow');
 	});
 });
