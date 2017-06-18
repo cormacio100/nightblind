@@ -11,7 +11,7 @@
 }
 
 .navbar{
-	font-size: 14p
+	font-size: 14px;
 }
 
 h2{
@@ -42,9 +42,6 @@ body{
 .carousel-inner > .item > img {
     margin: 0 auto;
 }
-
-
-
 
 section{
 	padding:100px 0;
@@ -420,4 +417,12 @@ header p{
 }
 .fa{
 	; visibility: visible;  -webkit-transform: scale(1); opacity: 1;transform: scale(1); opacity: 1;-webkit-transition: -webkit-transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; transition: transform 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s, opacity 0.6s cubic-bezier(0.6, 0.2, 0.1, 1) 0s; 
+}
+.contact_form_element,
+.contact_form_element option{
+	color:#FFFFFF;
+	background-color:#f10000;
+}
+#contact_send_btn{
+	margin-top:1em;
 }

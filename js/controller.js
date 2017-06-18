@@ -12,14 +12,12 @@ SectionControllers.controller('MainController',function($scope,$location,$anchor
 	var vm = this;
 });
 
+//	Controller to build the navigation of the site
 SectionControllers.controller('NavController',['$scope','$http',function($scope,$location,$anchorScroll){
 	$scope.links = links;
 }]);
 
-/**
-*	THIS IS THE CONTROLLER THAT DOESN'T FULLY WORK
-*	WHICH SERVICE DOES IT NEED TO CALL
-*/
+//	Controller to populate the band member section
 SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
 	var memberArr= [];
 	memberArr = MemberFactory.getMembers();
@@ -112,14 +110,12 @@ SectionControllers.controller('MemberController',function($scope,$http,MemberFac
 	});
 });
 
-
+//	Controller for the Gallery
 SectionControllers.controller('GalleryController',function($scope,$location){
 
 		$scope.showModal = false;
 
-
 		$scope.open = function() {
-			console.log('open clicked');
 		  $scope.showModal = true;
 		};
 
@@ -132,90 +128,32 @@ SectionControllers.controller('GalleryController',function($scope,$location){
 		};
 	
 	});
-/*
-SectionControllers.controller('NavController',['$scope','$http',function($scope,$location,$anchorScroll){
-		$scope.links = [
-			{title:'Home',href:'home'},
-			{title:'About',href:'about'},
-			{title:'Members',href:'member'},
-			{title:'Gallery',href:'gallery'},
-			{title:'Music',href:'music'},
-			{title:'Video',href:'video'},
-			{title:'Contact',href:'contact'},
-		];
 
-		// allows for scrolling to anchor links  
-		$scope.scrollTo = function(id){
+//	Controller for the Contact section
+SectionControllers.controller('ContactController',function($scope,$location){
 
-			
-			// NEED TO PUT IN ANIMATION TO SLOW DOWN THE SCROLLING
-		
-			//$('html body').animate({
+	var divString = '<form name="contact_quote_form">' +
+		'Name:<br>' +
+		'<input type="text" name="name" class="contact_form_element" ng-model="inquirer.name">' +
+        '<br>Email:<br>' +
+		'<input type="email" name="email" class="contact_form_element" ng-model="inquirer.email">' +
+		'<br><label ng-show="contact_quote_form.email.$pristine">Email Address invalid</label>' +
+        '<br>Date:<br>' +
+		'<input type="date" name="date" class="contact_form_element" ng-model="inquirer.date">' +
+        '<br>Length Of Set?:<br>' +
+		'<select name="event_type" class="contact_form_element" ng-model="inquirer.event_type">' +
+			'<option value=1>1 hour</option>' +
+			'<option value=2>2 hour</option>' +
+			'<option value=3>3 hour</option>' +
+		'</select>' +
+		'<br><button id="contact_send_btn" class="btn">Send</button>'
+		'</form>'
 
-			//	scrollTop: $($.attr(this,'href')).offset().top
-			//},500);
-
-			$location.hash(id)
-
-			$anchorScroll;
-		};
-
-	}]);*/
-
-/*
-SectionControllers.controller('MemberController',function($scope,$http,MemberAPIService){
-
-		// function retrieves data from service
-		var retrieveData = function(url,shortname){
-
-			// call to API service
-			// pass the url. No params passed
-			MemberAPIService.retrieveMembers(url).then(function(results) {
-				var memberArr = results.data;
-				// loop
-			    $.each(memberArr,function(index,value){
-			    	if(value.shortname==shortname){
-			    		$scope.name = value.name;
-			    		$scope.instrument = value.instrument;
-			    		$scope.gear = value.gear;
-			    	}	
-			    })
-
-			});
-		}
-		// location of data to be retrieved
-		var url='js/data.json';
-		// wait for a band member name to be clicked before sending request to API Service
-		$('#cormacThumb').click(function(){
-			retrieveData(url,'Cormac_Liston');
-		});
-		$('#hughThumb').click(function(){
-			retrieveData(url,'Hugh_OConnor');
-		});
-		$('#davyThumb').click(function(){
-			retrieveData(url,'Davy_Dwyer');
-		});
-		$('#freekThumb').click(function(){
-			retrieveData(url,'Freek_Vermeer');
-		});
+    $('#email-request').on('click',function(){
+    	console.log('clicked');
+     	$('#contact-info').fadeOut(1500,function() {
+            $('#contact-info').replaceWith(divString);
+            $('#contact-info').fadeIn(1500);
+        });
 	});
-SectionControllers.controller('GalleryController',function($scope,$location){
-
-		$scope.showModal = false;
-
-
-		$scope.open = function() {
-			console.log('open clicked');
-		  $scope.showModal = true;
-		};
-
-		$scope.ok = function() {
-		  $scope.showModal = false;
-		};
-
-		$scope.cancel = function() {
-		  $scope.showModal = false;
-		};
-	
-	});
-*/
+});
