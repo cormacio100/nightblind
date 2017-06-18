@@ -138,13 +138,13 @@ SectionControllers.controller('ContactController',function($scope,$location){
 		'Name:' +
 		'</div>' +
         '<div class="col-md-4 text-left" >'+
-		'<input type="text" name="name" class="contact_form_element" ng-model="inquirer.name">' +
+		'<input type="text" name="name" class="contact_form_element" ng-model="name" required>' +
 		'</div>' +
         '<div class="col-md-2 text-right" >'+
         'Email:' +
         '</div>' +
         '<div class="col-md-4 text-left" >'+
-		'<input type="email" name="email" class="contact_form_element" ng-model="inquirer.email">' +
+		'<input type="email" name="email" class="contact_form_element" ng-model="email" required>' +
         '</div>' +
         '</div>' +
 		//'<br><label ng-show="contact_quote_form.email.$pristine">Email Address invalid</label>' +
@@ -153,16 +153,16 @@ SectionControllers.controller('ContactController',function($scope,$location){
         'Gig Date:' +
         '</div>' +
         '<div class="col-md-4 text-left" >'+
-		'<input type="date" name="date" class="contact_form_element" ng-model="inquirer.date">' +
+		'<input type="date" name="date" class="contact_form_element" ng-model="date" required>' +
         '</div>' +
         '<div class="col-md-2 text-right" >'+
         'Set Length:' +
         '</div>' +
         '<div class="col-md-4 text-left" >'+
-		'<select name="event_type" class="contact_form_element" ng-model="inquirer.event_type">' +
+		'<select name="event_type" class="contact_form_element" ng-model="event_type" required>' +
 			'<option value=1>1 hour</option>' +
-			'<option value=2>2 hour</option>' +
-			'<option value=3>3 hour</option>' +
+			'<option value=2>2 hours</option>' +
+			'<option value=3>3 hours</option>' +
 		'</select>' +
         '</div>' +
         '</div>' +
@@ -171,15 +171,17 @@ SectionControllers.controller('ContactController',function($scope,$location){
         'Special Requirements' +
         '</div>' +
         '<div class="col-md-10 text-left" >' +
-        '<textarea rows="4" cols="70" class="contact_form_element" ></textarea>' +
+        '<textarea rows="4" cols="70" class="contact_form_element" ng-model="special_requirement"></textarea>' +
         '</div>' +
         '</div>' +
         '<div class="row">' +
         '<div class="col-md-12 text-center" >'+
-		'<button id="contact_send_btn" class="btn">Send</button>'
+		'<button id="contact_send_btn" class="btn" ng-disabled="contact_quote_form.$invalid">Send</button>' +
 		'</div>' +
 		'</div>' +
-		'</form>'
+		'</form>' +
+        '<p>The inputs valid state is:</p>' +
+    	'<h1>$sce.trustAsHtml({{contact_quote_form.myInput.$invalid}})</h1>' +
 
     $('#email-request').on('click',function(){
     	console.log('clicked');
