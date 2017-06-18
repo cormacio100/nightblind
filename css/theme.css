@@ -423,6 +423,13 @@ header p{
 	color:#FFFFFF;
 	background-color:#f10000;
 }
+.contact_form_element{
+	margin-bottom:1em;
+}
 #contact_send_btn{
 	margin-top:1em;
+	color:#000000;
+}
+#contact_send_btn:hover{
+	color: #f10000;
 }

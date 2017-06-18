@@ -132,27 +132,59 @@ SectionControllers.controller('GalleryController',function($scope,$location){
 //	Controller for the Contact section
 SectionControllers.controller('ContactController',function($scope,$location){
 
-	var divString = '<form name="contact_quote_form">' +
-		'Name:<br>' +
+	var formString = '<form name="contact_quote_form">' +
+        '<div class="row">' +
+        '<div class="col-md-2 text-right" >'+
+		'Name:' +
+		'</div>' +
+        '<div class="col-md-4 text-left" >'+
 		'<input type="text" name="name" class="contact_form_element" ng-model="inquirer.name">' +
-        '<br>Email:<br>' +
+		'</div>' +
+        '<div class="col-md-2 text-right" >'+
+        'Email:' +
+        '</div>' +
+        '<div class="col-md-4 text-left" >'+
 		'<input type="email" name="email" class="contact_form_element" ng-model="inquirer.email">' +
-		'<br><label ng-show="contact_quote_form.email.$pristine">Email Address invalid</label>' +
-        '<br>Date:<br>' +
+        '</div>' +
+        '</div>' +
+		//'<br><label ng-show="contact_quote_form.email.$pristine">Email Address invalid</label>' +
+        '<div class="row">' +
+        '<div class="col-md-2 text-right" >'+
+        'Gig Date:' +
+        '</div>' +
+        '<div class="col-md-4 text-left" >'+
 		'<input type="date" name="date" class="contact_form_element" ng-model="inquirer.date">' +
-        '<br>Length Of Set?:<br>' +
+        '</div>' +
+        '<div class="col-md-2 text-right" >'+
+        'Set Length:' +
+        '</div>' +
+        '<div class="col-md-4 text-left" >'+
 		'<select name="event_type" class="contact_form_element" ng-model="inquirer.event_type">' +
 			'<option value=1>1 hour</option>' +
 			'<option value=2>2 hour</option>' +
 			'<option value=3>3 hour</option>' +
 		'</select>' +
-		'<br><button id="contact_send_btn" class="btn">Send</button>'
+        '</div>' +
+        '</div>' +
+        '<div class="row">' +
+        '<div class="col-md-2 text-right" >'+
+        'Special Requirements' +
+        '</div>' +
+        '<div class="col-md-10 text-left" >' +
+        '<textarea rows="4" cols="70" class="contact_form_element" ></textarea>' +
+        '</div>' +
+        '</div>' +
+        '<div class="row">' +
+        '<div class="col-md-12 text-center" >'+
+		'<button id="contact_send_btn" class="btn">Send</button>'
+		'</div>' +
+		'</div>' +
 		'</form>'
 
     $('#email-request').on('click',function(){
     	console.log('clicked');
      	$('#contact-info').fadeOut(1500,function() {
-            $('#contact-info').replaceWith(divString);
+            $('#contact-info').replaceWith(formString);
             $('#contact-info').fadeIn(1500);
         });
 	});
