@@ -5,7 +5,7 @@
 				<h2 class="section-heading">Contact The Band</h2>
 				<hr class="primary">
 				<p id="contact-info">Want to book us for a show? Give us a call or send us an email and we will get back to you as soon as possible!</p>
-				<form name="contact_quote_form" id="contact_quote_form">
+				<form name="contact_quote_form" id="contact_quote_form" ng-submit="contactQuote()">
 					<div class="row">
 						<div class="col-md-2 text-right" >
 							Name:
@@ -43,7 +43,7 @@
 							Set Length:
 						</div>
 						<div class="col-md-4 text-left" >
-							<select name="set_length" class="contact_form_element" ng-model="event_type" required>
+							<select name="set_length" class="contact_form_element" ng-model="set_length" required>
 								<option value=1>1 hour</option>
 								<option value=2>2 hours</option>
 								<option value=3>3 hours</option>
