@@ -9,7 +9,7 @@ SectionControllers.factory('MemberFactory',function(){
 });
 
 //  Factory for retrieving info on gig prices and availability
-SectionControllers.factory('PricesAndAvailFactory',function(){
+SectionControllers.factory('PricesAndAvailabilityFactory',function(){
     var factory = {};
     factory.getPriceList = function(){
         return priceList;

@@ -3,16 +3,21 @@ Build contact form (with validation that is initially hidden:
 	-	Response should display from a json file. Differnt price per day of the week
 	STEPS:
 	-	Build the JSON variables to hold prices and to hold dates of booking	-	done
-	-	Build the form	
-	-	Build the controller to:
-		-	Retrieve data from form
-		-	Compare data against JSON variable
-		-	Dispay result on te screen
+	-	Build the form	-	Done
+	-	Send button is clicked	
+		-	The form hides and a spinner appears, to show that the page is searching - done
+		-	Values retrieved from form - done
+		-	Compare data against JSON variable - done
+		-	Dispay result on the screen - done
+		-	Give option to book the date
+		
+	-	On Gallery Put an indicattor beside the updown arrows to inidcate what they are
+		
 	
 Add Bootstrap flexibility for responsiveness
 
 Something is up when you click Studio Images. When linking back from GALLERY PAGE IT LINKS TO THE MEMBER SECTION INSTEAD OF THE GALLERY SECTION. 
-
+	
 Document testing
 
 -----------------------------------------------------------------------------------

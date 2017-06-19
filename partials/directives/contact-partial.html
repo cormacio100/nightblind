@@ -43,7 +43,7 @@
 							Set Length:
 						</div>
 						<div class="col-md-4 text-left" >
-							<select name="set_length" class="contact_form_element" ng-model="set_length" required>
+							<select name="set_length" class="contact_form_element" ng-model="setLength" required>
 								<option value=1>1 hour</option>
 								<option value=2>2 hours</option>
 								<option value=3>3 hours</option>
@@ -58,7 +58,7 @@
 							Special Requirements
 						</div>
 						<div class="col-md-10 text-left" >
-							<textarea rows="4" cols="70" class="contact_form_element" ng-model="special_requirement"></textarea>
+							<textarea rows="4" cols="70" class="contact_form_element" ng-model="specialRequirement"></textarea>
 						</div>
 					</div>
 					<div class="row">
@@ -67,6 +67,16 @@
 						</div>
 					</div>
 				</form>
+				<div id="spinning"><i class="fa fa-spinner fa-spin loading_spinner" ></i></div>
+				<div id="quote">
+					<div class="row">
+						<div class="col-md-3 text-left" >&nbsp;</div>
+						<div class="col-md-6 text-left" >
+							<p id="quote_string"></p>
+						</div>
+						<div class="col-md-3 text-left" >&nbsp;</div>
+					</div>
+				</div>
 			</div>
 		</div>
 		<div class="row" id="contactsRow">

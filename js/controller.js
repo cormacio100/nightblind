@@ -130,23 +130,95 @@ SectionControllers.controller('GalleryController',function($scope,$location){
 	});
 
 //	Controller for the Contact section
-SectionControllers.controller('ContactController',function($scope,$location){
+SectionControllers.controller('ContactController',function($scope,$location,PricesAndAvailabilityFactory){
+
+    //	set delay for 2 seconds to show that the app is searching
+    var wait = function(requestedDate,setLength,dateFree){
+
+        var datesBookedArr= [];
+
+
+        datesBookedArr = PricesAndAvailabilityFactory.getDatesBooked();
+        $.each(datesBookedArr,function(index,value){
+            var bookingDate = new Date(value.date);
+            //	Check if the date entered by the user has already been taken
+            if(+bookingDate === +requestedDate){
+                dateFree = false;
+            }
+        });
+        console.log('dateFree:'+dateFree);
+
+        Date.locale = {
+            en: {
+                month_names: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
+                month_names_short: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+            }
+        };
+
+        var priceListArr= [];
+        priceListArr = PricesAndAvailabilityFactory.getPriceList();
+        var availability = '';
+        var day = requestedDate.getDate();
+        var month = Date.locale['en'].month_names[requestedDate.getMonth()];
+        var year = requestedDate.getFullYear();
+        var dayOfWeek = weekday[requestedDate.getDay()];
+        var dateString = dayOfWeek+' '+day+'-'+month+'-'+year;
+        console.log('day of week:'+dayOfWeek);
+        if(dateFree){
+            $.each(priceListArr,function(index,value){
+                //	Compare the day of week and set length to the pricelist
+                if(value.dayOfWeek == dayOfWeek){
+                	console.log('setLength is '+setLength);
+                    if(value.setLength==setLength){
+                        if(1==setLength){
+                            setLength = setLength+' Hour';
+                        }else{
+                            setLength = setLength+' Hours';
+                        }
+                        availability = 'You have requested the band to play on <br><span class="nb_red">'+dateString+'</span> for <span class="nb_red">'+setLength+'</span>. <br>The band is <span class="nb_red"><STRONG>available</STRONG></span>. <br>The price for the gig is <span class="nb_red">€'+value.price+'</span>';
+                    }
+                }
+            });
+        }else{
+            availability = 'You have requested the band to play on <br><span class="nb_red">'+dateString+'</span>. <br>Unfortunately, the band is <span class="nb_red"><strong>NOT AVAILABLE</strong></span> on that date'
+		}
+		console.log('availability is:'+availability);
+        //$scope.availability = availability;
+        $('#quote_string').html(availability);
+        $('#spinning').slideToggle('slow');
+        $('#quote').slideToggle('slow');
+    };
+
+
 	$scope.contactQuote = function(){
         $scope.enquiry = {};
+        var name = '';
+        var email = '';
+        var requestedDate = null;
+        var setLength = 0;
+        var specialRequirements = '';
+        var dateFree = true;
 		if($scope.contact_quote_form.$valid){
-			$scope.enquiry.name = $scope.name;
-            $scope.enquiry.email = $scope.email;
-            $scope.enquiry.date = $scope.date;
-            $scope.enquiry.set_length = $scope.set_length;
-            $scope.enquiry.special_requirement = $scope.special_requirement;
-            console.log('name is '+$scope.enquiry.name);
+			name = $scope.name;
+            email = $scope.email;
+            requestedDate = new Date($scope.date);
+            setLength = $scope.setLength;
+            specialRequirements = $scope.specialRequirement;
 		}
-        var priceListArr= [];
-        var datesBooked= [];
-        priceListArr = MemberFactory.getPriceList();
-        datesBooked = MemberFactory.getDatesBooked();
 
-        /*********
+		//	replace the form with a loading/searching spinner
+        //$('#contact_quote_form').replaceWith('<div id="spinning"><i class="fa fa-spinner fa-spin loading_spinner" ></i></div>');
+        $('#contact_quote_form').slideToggle('slow');
+        $('#spinning').slideToggle('slow');
+
+        //	Wait 2 seconds before showing result
+        setTimeout(function(){wait(requestedDate,setLength,dateFree)},2000);
+
+        /*
+        *	TO DO
+        * 	display the response section AND ASK USER TO CONFIRM THE BOOKING
+        */
+		/*********
 		 * TO DO
 		 * COMPARE THE DATE AGAINST THE SET OF DATES ALREADY BOOKED
 		 * IF NOT BOOKED
@@ -167,14 +239,24 @@ SectionControllers.controller('ContactController',function($scope,$location){
 		 * ELSE
 		 * -	A NOTICE WILL APPEAR TO SHOW THE BAND IS BOOKED ON THAT DATE.
          */
-
-
-
     };
 
 	$('#contact_quote_form').hide();
-
+    $('#spinning').hide();
+    $('#quote').hide();
     $('#email-request').on('click',function(){
+
+        /**
+		 * TO DO
+		 * WE WANT TO CHECK IF THE FORM IS DISPLAYED OR NOT WHEN BUTTON IS CLICKED.
+		 * IF NOT
+		 * THEN WE DO NOT WANT THE INITIAL INSTRUCTION PHRASE TO APPEAR
+		 * IF YES
+		 * THEN WE DO
+         */
+
+        $('#spinning').hide();
+        $('#quote').hide();
      	$('#contact-info').slideToggle('slow');
         $('#contact_quote_form').slideToggle('slow');
 	});
