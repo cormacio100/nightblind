@@ -132,6 +132,35 @@ SectionControllers.controller('GalleryController',function($scope,$location){
 //	Controller for the Contact section
 SectionControllers.controller('ContactController',function($scope,$location,PricesAndAvailabilityFactory){
 
+    /**
+	 Steps in the BOOKING process:
+	-	When page loads
+		-	hide "quote_string"
+		-	hide action_buttons
+	 	-	show "contact-info"
+	-	When CONTACT button is clicked
+	 	-	Need to  make sure all elements are hidden again in case this is not the first time the button has been clicked
+		-	Toggle "contact_quote_form" to show
+		-	Toggle "contact-info string" to hide
+	-	When SEND button is clicked
+	 	-	Toggle "contact_quote_form" to hide
+	 	-	Toggle "spinning" to show
+	 	-	If date is AVAILABLE
+			-	Toggle or SlideUp the "quote_string" to show
+			-	Toggle or SlideUp the "action_buttons" to show
+			-	If CONFIRM button is clicked
+				-	Toggle booking request "confirmation" to hide
+				-	Toggle "booked" to show
+			-	IF CANCEL button is clicked
+				-	Toggle booking request "confirmation" to hide
+				-	Toggle "contact-info" to show
+		-	If date is UNAVAILABLE
+			-	Toggle or SlideUp the "quote_string" to show
+     */
+
+
+
+
     //	set delay for 2 seconds to show that the app is searching
     var wait = function(requestedDate,setLength,dateFree){
 
@@ -178,19 +207,32 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
                 }
             });
         }else{
-            availability = 'You have requested the band to play on <br><span class="nb_red">'+dateString+'</span>. <br>Unfortunately, the band is <span class="nb_red"><strong>NOT AVAILABLE</strong></span> on that date'
+            availability = 'You have requested the band to play on <br><span class="nb_red">'+dateString+'</span>. <br>Unfortunately, the band is <span class="nb_red"><strong>NOT AVAILABLE</strong></span> on that date.'
 		}
 		console.log('availability is:'+availability);
-        //$scope.availability = availability;
-        $('#quote_string').html(availability);
+
+		//	remove the spinner
+		$('#spinning').slideToggle('slow');
+		//	Display availability
+		$('#quote_string').html(availability);
         if(dateFree){
         	console.log('the band is free on that date');
+            $('#confirmation').show();
         	$('#action_buttons').show();
+		}else{
+            $('#confirmation').show();
+            $('#action_buttons').hide();
 		}
-		//	remove the spinner
-        $('#spinning').slideToggle('slow');
-        //	add the quote
-        $('#quote').slideToggle('slow');
+		if($('#quote').is(':visible')){
+			console.log(('quote section was already visible'));
+            if($('#confirmation').is(':visible')){
+                console.log(('confirmation section was already visible'));
+			}
+		}else{
+            console.log(('quote section was NOT already visible'));
+		}
+		//	add the quote
+		$('#quote').slideToggle('slow');	//	show
     };
 
 	$scope.contactQuote = function(){
@@ -230,14 +272,14 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
 				//$.each(bookings,function(index,value){
 				//	console.log('date:'+value.date+' S.R.:'+value.specialRequirements);
 				//});
-                $('#confirmation').slideToggle('slow');
+                $('#confirmation').slideToggle('slow');		//	hide
                 $('#confirmed').html('The gig has been <span class="nb_red">CONFIRMED</span>');
-                $('#booked').slideToggle('slow');
+                $('#booked').slideToggle('slow');			//	show
 			}
 		});
         $('#cancel_booking_request').on('click',function(){
-            $('#confirmation').slideToggle('slow');
-            $('#contact-info').slideToggle('slow');
+            $('#confirmation').slideToggle('slow');			//	hide
+            $('#contact-info').slideToggle('slow');			//	show
 		});
 
         /*
@@ -263,12 +305,16 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
          */
     };
 
-	//	HIDE DOM ELEMENTS ON PAGE LOAD
-	$('#contact_quote_form').hide();
-    $('#spinning').hide();
-    $('#quote').hide();
-    $('#action_buttons').hide();
-    $('#booked').hide();
+	var initHide = function(){
+        //	INITIALLY HIDE RELEVANT DOM ELEMENTS
+        $('#contact_quote_form').hide();
+        $('#spinning').hide();
+        $('#quote').hide();
+        $('#action_buttons').hide();
+        $('#booked').hide();
+	};
+
+    initHide();
 
     //	On each click the form should be cleared
     var clearForm = function(){

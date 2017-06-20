@@ -1,5 +1,28 @@
 When a date is booked through the site - it saves to the bookedDates array. However, if you try to rebook on the same date the "unavailable" date does not appear
 	
+Steps:	
+	-	When page loads
+		-	hide quote string 
+		-	hide action_buttons
+	-	When CONTACT button is clicked 
+		-	Toggle "contact_quote_form" to show
+		-	Toggle "contact-info string" to hide
+	-	When SEND button is clicked
+		-	Toggle "contact_quote_form" to hide 
+		-	Toggle "spinning" to show
+		-	If date is AVAILABLE
+			-	Toggle or SlideUp the "quote_string" to show
+			-	Toggle or SlideUp the "action_buttons" to show
+			-	If CONFIRM button is clicked 
+				-	Toggle booking request "confirmation" to hide 
+				-	Toggle "booked" to show
+			-	IF CANCEL button is clicked
+				-	Toggle booking request "confirmation" to hide 
+				-	Toggle "contact-info" to show 
+			
+		-	Id date is UNAVAILABLE
+			-	Toggle or SlideUp the quote_string to show
+	
 		
 	
 Add Bootstrap flexibility for responsiveness
