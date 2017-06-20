@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43813dd5-9e15-46e0-a596-491292d6a895" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/theme.css" afterPath="$PROJECT_DIR$/css/theme.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller.js" afterPath="$PROJECT_DIR$/js/controller.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/contact-partial.html" afterPath="$PROJECT_DIR$/partials/directives/contact-partial.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-do.txt" afterPath="$PROJECT_DIR$/to-do.txt" />
@@ -22,8 +23,8 @@
       <file leaf-file-name="theme.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/theme.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="254">
-              <caret line="450" column="18" lean-forward="false" selection-start-line="450" selection-start-column="18" selection-end-line="450" selection-end-column="18" />
+            <state relative-caret-position="441">
+              <caret line="470" column="1" lean-forward="true" selection-start-line="470" selection-start-column="1" selection-end-line="470" selection-end-column="1" />
               <folding />
             </state>
           </provider>
@@ -32,14 +33,15 @@
       <file leaf-file-name="contact-partial.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partials/directives/contact-partial.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="74" column="42" lean-forward="false" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="42" />
+            <state relative-caret-position="187">
+              <caret line="90" column="66" lean-forward="false" selection-start-line="90" selection-start-column="66" selection-end-line="90" selection-end-column="66" />
               <folding>
                 <element signature="n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
                 <element signature="e#3130#3136#1" expanded="true" />
-                <element signature="e#3615#3621#1" expanded="true" />
+                <element signature="e#3603#3609#1" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -48,13 +50,22 @@
       <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="484">
-              <caret line="234" column="52" lean-forward="false" selection-start-line="234" selection-start-column="52" selection-end-line="234" selection-end-column="52" />
+            <state relative-caret-position="246">
+              <caret line="237" column="35" lean-forward="false" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="35" />
               <folding>
                 <element signature="e#759#3660#0" expanded="false" />
                 <element signature="e#3770#3999#0" expanded="false" />
-                <element signature="e#5350#5586#0" expanded="false" />
-                <element signature="e#5655#5971#0" expanded="false" />
+                <element signature="e#5225#5646#0" expanded="false" />
+                <element signature="e#5757#6200#0" expanded="false" />
+                <element signature="e#6295#6466#0" expanded="false" />
+                <element signature="e#8985#9111#0" expanded="false" />
+                <element signature="e#9236#12539#0" expanded="false" />
+                <element signature="e#9394#9630#0" expanded="false" />
+                <element signature="e#9701#10017#0" expanded="false" />
+                <element signature="e#10506#11416#0" expanded="false" />
+                <element signature="e#12396#12469#0" expanded="false" />
+                <element signature="e#12650#14484#0" expanded="false" />
+                <element signature="e#12925#13188#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -136,11 +147,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>sudden</find>
-      <find>member</find>
-      <find>ng-repeat</find>
-      <find>NavController</find>
-      <find>contact</find>
       <find>#</find>
       <find>text-center</find>
       <find>slideToggle</find>
@@ -157,14 +163,20 @@
       <find>dateFree</find>
       <find>the band is</find>
       <find>available</find>
-      <find>send</find>
-      <find>confirmation</find>
       <find>booked</find>
-      <find>contact-info</find>
       <find>quote_string</find>
       <find>quote</find>
       <find>confirmed</find>
       <find>id=&quot;quote</find>
+      <find>action_buttons</find>
+      <find>contact_send_btn</find>
+      <find>send</find>
+      <find>email-request</find>
+      <find>wait</find>
+      <find>#quote</find>
+      <find>confirmation</find>
+      <find>#confirmed</find>
+      <find>contact-info</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -182,11 +194,11 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/factory.js" />
         <option value="$PROJECT_DIR$/js/global_vars.js" />
-        <option value="$PROJECT_DIR$/css/theme.css" />
         <option value="$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html" />
         <option value="$PROJECT_DIR$/partials/directives/gallery-studio-partial.html" />
         <option value="$PROJECT_DIR$/partials/directives/gallery-live-partial.html" />
         <option value="$PROJECT_DIR$/partials/directives/contact-partial.html" />
+        <option value="$PROJECT_DIR$/css/theme.css" />
         <option value="$PROJECT_DIR$/js/controller.js" />
       </list>
     </option>
@@ -394,12 +406,12 @@
       <option name="presentableId" value="Default" />
       <updated>1497537632187</updated>
       <workItem from="1497537637184" duration="20414000" />
-      <workItem from="1497805376527" duration="45502000" />
+      <workItem from="1497805376527" duration="53167000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="65916000" />
+    <option name="totallyTimeSpent" value="73581000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -431,7 +443,16 @@
     <option name="myLimit" value="2678400000" />
   </component>
   <component name="XDebuggerManager">
-    <breakpoint-manager />
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/js/controller.js</url>
+          <line>204</line>
+          <properties />
+        </line-breakpoint>
+      </breakpoints>
+      <option name="time" value="1" />
+    </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
@@ -518,8 +539,17 @@
           <folding>
             <element signature="e#759#3660#0" expanded="false" />
             <element signature="e#3770#3999#0" expanded="false" />
-            <element signature="e#5350#5586#0" expanded="false" />
-            <element signature="e#5655#5971#0" expanded="false" />
+            <element signature="e#5225#5646#0" expanded="false" />
+            <element signature="e#5757#6200#0" expanded="false" />
+            <element signature="e#6295#6466#0" expanded="false" />
+            <element signature="e#8985#9111#0" expanded="false" />
+            <element signature="e#9236#12539#0" expanded="false" />
+            <element signature="e#9394#9630#0" expanded="false" />
+            <element signature="e#9701#10017#0" expanded="false" />
+            <element signature="e#10506#11416#0" expanded="false" />
+            <element signature="e#12396#12469#0" expanded="false" />
+            <element signature="e#12650#14484#0" expanded="false" />
+            <element signature="e#12925#13188#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -545,6 +575,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-419">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -678,14 +709,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="254">
-          <caret line="450" column="18" lean-forward="false" selection-start-line="450" selection-start-column="18" selection-end-line="450" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -710,29 +733,47 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/css/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="441">
+          <caret line="470" column="1" lean-forward="true" selection-start-line="470" selection-start-column="1" selection-end-line="470" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/contact-partial.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="74" column="42" lean-forward="false" selection-start-line="74" selection-start-column="37" selection-end-line="74" selection-end-column="42" />
+        <state relative-caret-position="187">
+          <caret line="90" column="66" lean-forward="false" selection-start-line="90" selection-start-column="66" selection-end-line="90" selection-end-column="66" />
           <folding>
             <element signature="n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#form#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
             <element signature="n#div#0;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
+            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#section#0;n#!!top" expanded="false" />
             <element signature="e#3130#3136#1" expanded="true" />
-            <element signature="e#3615#3621#1" expanded="true" />
+            <element signature="e#3603#3609#1" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/js/controller.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="234" column="52" lean-forward="false" selection-start-line="234" selection-start-column="52" selection-end-line="234" selection-end-column="52" />
+        <state relative-caret-position="246">
+          <caret line="237" column="35" lean-forward="false" selection-start-line="237" selection-start-column="28" selection-end-line="237" selection-end-column="35" />
           <folding>
             <element signature="e#759#3660#0" expanded="false" />
             <element signature="e#3770#3999#0" expanded="false" />
-            <element signature="e#5350#5586#0" expanded="false" />
-            <element signature="e#5655#5971#0" expanded="false" />
+            <element signature="e#5225#5646#0" expanded="false" />
+            <element signature="e#5757#6200#0" expanded="false" />
+            <element signature="e#6295#6466#0" expanded="false" />
+            <element signature="e#8985#9111#0" expanded="false" />
+            <element signature="e#9236#12539#0" expanded="false" />
+            <element signature="e#9394#9630#0" expanded="false" />
+            <element signature="e#9701#10017#0" expanded="false" />
+            <element signature="e#10506#11416#0" expanded="false" />
+            <element signature="e#12396#12469#0" expanded="false" />
+            <element signature="e#12650#14484#0" expanded="false" />
+            <element signature="e#12925#13188#0" expanded="false" />
           </folding>
         </state>
       </provider>

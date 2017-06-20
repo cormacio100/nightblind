@@ -460,11 +460,12 @@ header p{
 .form_button:hover{
 	color:white;
 }
-#action_buttons{
+#quote_action_buttons{
 	margin: 1em;
 	padding: 1em;
 	border-top: 1px solid white;
 }
-#confirmation{
+#quote_string,
+#quote_action_buttons{
 	text-align:center;
 }
