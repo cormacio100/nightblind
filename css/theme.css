@@ -129,8 +129,8 @@ header p{
 	color: #f10000;
 	font-size:5em;
 }
-.btn-primary{
-	
+.btn-primary,
+.btn-primary:hover{
 	border:2px solid #ffffff;
 	background-color:#f10000;
 	border:0;
@@ -450,4 +450,18 @@ header p{
 .loading_spinner{
 	font-size:70px;
 	margin:1em;
+}
+.form_button{
+	background-color: #f10000;
+}
+.form_button:hover{
+	color:white;
+}
+#action_buttons{
+	margin: 1em;
+	padding: 1em;
+	border-top: 1px solid white;
+}
+#confirmation{
+	text-align:center;
 }

@@ -11,7 +11,7 @@
 							Name:
 							</div>
 						<div class="col-md-4 text-left" >
-							<input type="text" name="name" class="contact_form_element" ng-model="name" required>
+							<input type="text" id="name" name="name" class="contact_form_element" ng-model="name" required>
 							<br>
 							<span class="form_error" ng-show="contact_quote_form.name.$dirty && contact_quote_form.name.$invalid">
 								<span ng-show="contact_quote_form.name.$error.required">name is required.</span>
@@ -21,7 +21,7 @@
 							Email:
 						</div>
 						<div class="col-md-4 text-left" >
-							<input type="email" name="email" class="contact_form_element" ng-model="email" required>
+							<input type="email" id="email" name="email" class="contact_form_element" ng-model="email" required>
 							<br>
 							<span class="form_error" ng-show="contact_quote_form.email.$error.email">
 								A valid email is required.
@@ -33,7 +33,7 @@
 							Gig Date:
 						</div>
 						<div class="col-md-4 text-left" >
-							<input type="date" name="date" class="contact_form_element" ng-model="date" required>
+							<input type="date" id="date" name="date" class="contact_form_element" ng-model="requestedDate" required>
 							<br>
 							<span class="form_error" ng-show="contact_quote_form.date.$dirty && contact_quote_form.date.$invalid">
 								<span ng-show="contact_quote_form.date.$error.required">Enter a valid date</span>
@@ -49,7 +49,7 @@
 								<option value=3>3 hours</option>
 							</select>
 							<span class="form_error" ng-show="contact_quote_form.event_type.$dirty && contact_quote_form.event_type.$invalid">
-								<span ng-show="contact_quote_form.event_type.$error.required">Enter set length</span>
+								<span ng-show="contact_quote_form.event_type.$error.required">Choose a set length</span>
 							</span>
 						</div>
 					</div>
@@ -58,24 +58,33 @@
 							Special Requirements
 						</div>
 						<div class="col-md-10 text-left" >
-							<textarea rows="4" cols="70" class="contact_form_element" ng-model="specialRequirement"></textarea>
+							<textarea rows="4" cols="70" class="contact_form_element" ng-model="specialRequirements"></textarea>
 						</div>
 					</div>
 					<div class="row">
 						<div class="col-md-12 text-center" >
-							<button id="contact_send_btn" class="btn" ng-disabled="contact_quote_form.$invalid">Send</button>
+							<button id="contact_send_btn" class="btn form_button" ng-disabled="contact_quote_form.$invalid">Send</button>
 						</div>
 					</div>
 				</form>
-				<div id="spinning"><i class="fa fa-spinner fa-spin loading_spinner" ></i></div>
-				<div id="quote">
-					<div class="row">
-						<div class="col-md-3 text-left" >&nbsp;</div>
-						<div class="col-md-6 text-left" >
-							<p id="quote_string"></p>
-						</div>
-						<div class="col-md-3 text-left" >&nbsp;</div>
+				<div class="row" id="spinning">
+					<div class="col-md-12">
+						<i class="fa fa-spinner fa-spin loading_spinner" ></i>
 					</div>
+				</div>
+				<div class="row" id="quote">
+					<div class="col-md-2 text-left" >&nbsp;</div>
+					<div class="col-md-8 text-left" id="confirmation">
+						<p id="quote_string"></p>
+						<div id="action_buttons">
+							<button id="confirm_booking" class="btn form_button">Confirm Booking</button>
+							<button id="cancel_booking_request" class="btn form_button">Cancel</button>
+						</div>
+					</div>
+					<div class="col-md-2 text-left" >&nbsp;</div>
+				</div>
+				<div class="row" id="booked">
+					<div class="col-md-12 text-center" id="confirmed"></div>
 				</div>
 			</div>
 		</div>

@@ -136,8 +136,6 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
     var wait = function(requestedDate,setLength,dateFree){
 
         var datesBookedArr= [];
-
-
         datesBookedArr = PricesAndAvailabilityFactory.getDatesBooked();
         $.each(datesBookedArr,function(index,value){
             var bookingDate = new Date(value.date);
@@ -175,7 +173,7 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
                         }else{
                             setLength = setLength+' Hours';
                         }
-                        availability = 'You have requested the band to play on <br><span class="nb_red">'+dateString+'</span> for <span class="nb_red">'+setLength+'</span>. <br>The band is <span class="nb_red"><STRONG>available</STRONG></span>. <br>The price for the gig is <span class="nb_red">€'+value.price+'</span>';
+                        availability = 'You have requested the band to play on <br><span class="nb_red">'+dateString+'</span> for <span class="nb_red">'+setLength+'</span>. <br>The band is <span class="nb_red"><STRONG>AVAILABLE</STRONG></span> on that date. <br>The price for the gig is <span class="nb_red">€'+value.price+'</span>';
                     }
                 }
             });
@@ -185,25 +183,32 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
 		console.log('availability is:'+availability);
         //$scope.availability = availability;
         $('#quote_string').html(availability);
+        if(dateFree){
+        	console.log('the band is free on that date');
+        	$('#action_buttons').show();
+		}
+		//	remove the spinner
         $('#spinning').slideToggle('slow');
+        //	add the quote
         $('#quote').slideToggle('slow');
     };
-
 
 	$scope.contactQuote = function(){
         $scope.enquiry = {};
         var name = '';
         var email = '';
         var requestedDate = null;
+        var dateString = '';
         var setLength = 0;
         var specialRequirements = '';
         var dateFree = true;
 		if($scope.contact_quote_form.$valid){
 			name = $scope.name;
             email = $scope.email;
-            requestedDate = new Date($scope.date);
+            dateString = $scope.requestedDate;
+            requestedDate = new Date(dateString);
             setLength = $scope.setLength;
-            specialRequirements = $scope.specialRequirement;
+            specialRequirements = $scope.specialRequirements;
 		}
 
 		//	replace the form with a loading/searching spinner
@@ -214,6 +219,27 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
         //	Wait 2 seconds before showing result
         setTimeout(function(){wait(requestedDate,setLength,dateFree)},2000);
 
+        //	When the potential booking is displayed to the user they can choose to confirm or cancel the booking
+        $('#confirm_booking').on('click',function(){
+        	console.log('confirm');
+            var success = PricesAndAvailabilityFactory.setBooking(dateString,specialRequirements);
+            if(success){
+            	console.log('success');
+                // then confirm what's in the array now
+				//var bookings = PricesAndAvailabilityFactory.getDatesBooked();
+				//$.each(bookings,function(index,value){
+				//	console.log('date:'+value.date+' S.R.:'+value.specialRequirements);
+				//});
+                $('#confirmation').slideToggle('slow');
+                $('#confirmed').html('The gig has been <span class="nb_red">CONFIRMED</span>');
+                $('#booked').slideToggle('slow');
+			}
+		});
+        $('#cancel_booking_request').on('click',function(){
+            $('#confirmation').slideToggle('slow');
+            $('#contact-info').slideToggle('slow');
+		});
+
         /*
         *	TO DO
         * 	display the response section AND ASK USER TO CONFIRM THE BOOKING
@@ -221,10 +247,6 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
 		/*********
 		 * TO DO
 		 * COMPARE THE DATE AGAINST THE SET OF DATES ALREADY BOOKED
-		 * IF NOT BOOKED
-		 * -	CHECK THE DATE FOR WHICH DAY OF THE WEEK IT IS
-		 * -	CHECK HOW MANY HOURS THE SET IS
-		 * -	GET A PRICE
 		 *
 		 * CREATE ANOTHER DIV THAT IS INITIALLY HIDDEN
 		 * THIS DIV WILL CONTAIN A THANK YOU FOR CONTACTING US SECTION
@@ -241,23 +263,32 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
          */
     };
 
+	//	HIDE DOM ELEMENTS ON PAGE LOAD
 	$('#contact_quote_form').hide();
     $('#spinning').hide();
     $('#quote').hide();
+    $('#action_buttons').hide();
+    $('#booked').hide();
+
+    //	On each click the form should be cleared
+    var clearForm = function(){
+        $('#contact_quote_form').find("input[type=text],input[type=email],input[type=date],select, textarea").val("");
+	};
+
     $('#email-request').on('click',function(){
-
-        /**
-		 * TO DO
-		 * WE WANT TO CHECK IF THE FORM IS DISPLAYED OR NOT WHEN BUTTON IS CLICKED.
-		 * IF NOT
-		 * THEN WE DO NOT WANT THE INITIAL INSTRUCTION PHRASE TO APPEAR
-		 * IF YES
-		 * THEN WE DO
-         */
-
+		//	Is the form being displayed at the time of clicking?
+		//	If it is we want to clear the form and also remove the contact-info
+        if($('#contact_quote_form').is(':visible')){
+			console.log('form is visible');
+            $('#contact-info').slideToggle('slow');
+		}else{
+            console.log('form is NOT visible');
+            $('#contact-info').slideUp('slow');
+            clearForm();
+		}
         $('#spinning').hide();
         $('#quote').hide();
-     	$('#contact-info').slideToggle('slow');
+        $('#booked').hide();
         $('#contact_quote_form').slideToggle('slow');
 	});
 });

@@ -17,6 +17,16 @@ SectionControllers.factory('PricesAndAvailabilityFactory',function(){
     factory.getDatesBooked = function(){
         return datesBooked;
     }
+    factory.setBooking = function(date,request){
+        var booking = {};
+        booking.date = date;
+        booking.specialRequirements = request;
+        if(datesBooked.push(booking)){
+            return true;
+        }else{
+            return false;
+        }
+    }
     return factory;
 });
 
