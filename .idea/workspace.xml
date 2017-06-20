@@ -3,9 +3,10 @@
   <component name="ChangeListManager">
     <list default="true" id="43813dd5-9e15-46e0-a596-491292d6a895" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/theme.css" afterPath="$PROJECT_DIR$/css/theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/controller.js" afterPath="$PROJECT_DIR$/js/controller.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/factory.js" afterPath="$PROJECT_DIR$/js/factory.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/contact-partial.html" afterPath="$PROJECT_DIR$/partials/directives/contact-partial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html" afterPath="$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/gallery-live-partial.html" afterPath="$PROJECT_DIR$/partials/directives/gallery-live-partial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/gallery-studio-partial.html" afterPath="$PROJECT_DIR$/partials/directives/gallery-studio-partial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-do.txt" afterPath="$PROJECT_DIR$/to-do.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -23,8 +24,8 @@
       <file leaf-file-name="theme.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/css/theme.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="186">
-              <caret line="446" column="7" lean-forward="false" selection-start-line="446" selection-start-column="1" selection-end-line="446" selection-end-column="7" />
+            <state relative-caret-position="254">
+              <caret line="450" column="18" lean-forward="false" selection-start-line="450" selection-start-column="18" selection-end-line="450" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -44,7 +45,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="controller.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="controller.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="398">
@@ -55,6 +56,46 @@
                 <element signature="e#4429#4665#0" expanded="false" />
                 <element signature="e#4734#5050#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gallery_main.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/partials/gallery_main.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gallery-live-partial.html" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/partials/directives/gallery-live-partial.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="68">
+              <caret line="4" column="114" lean-forward="false" selection-start-line="4" selection-start-column="114" selection-end-line="4" selection-end-column="114" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gallery-studio-partial.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/partials/directives/gallery-studio-partial.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="85">
+              <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="gallery-artwork-partial.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="51">
+              <caret line="3" column="163" lean-forward="false" selection-start-line="3" selection-start-column="163" selection-end-line="3" selection-end-column="163" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -76,38 +117,6 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="272">
               <caret line="16" column="26" lean-forward="false" selection-start-line="16" selection-start-column="12" selection-end-line="16" selection-end-column="26" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main_page.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/partials/main_page.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="custom.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/js/custom.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="57" column="0" lean-forward="true" selection-start-line="57" selection-start-column="0" selection-end-line="57" selection-end-column="0" />
-              <folding>
-                <element signature="e#293#1083#0" expanded="false" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="336">
-              <caret line="26" column="102" lean-forward="true" selection-start-line="26" selection-start-column="102" selection-end-line="26" selection-end-column="102" />
               <folding />
             </state>
           </provider>
@@ -145,12 +154,12 @@
       <find>contact_form_element</find>
       <find>set</find>
       <find>btn</find>
-      <find>quote_string</find>
       <find>dateFree</find>
       <find>the band is</find>
       <find>available</find>
-      <find>confirmed</find>
       <find>send</find>
+      <find>confirmed</find>
+      <find>quote_string</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -168,9 +177,12 @@
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/factory.js" />
         <option value="$PROJECT_DIR$/js/global_vars.js" />
-        <option value="$PROJECT_DIR$/css/theme.css" />
         <option value="$PROJECT_DIR$/partials/directives/contact-partial.html" />
         <option value="$PROJECT_DIR$/js/controller.js" />
+        <option value="$PROJECT_DIR$/css/theme.css" />
+        <option value="$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html" />
+        <option value="$PROJECT_DIR$/partials/directives/gallery-studio-partial.html" />
+        <option value="$PROJECT_DIR$/partials/directives/gallery-live-partial.html" />
       </list>
     </option>
   </component>
@@ -228,6 +240,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nightblind" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="nightblind" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="partials" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="directives" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -359,12 +389,12 @@
       <option name="presentableId" value="Default" />
       <updated>1497537632187</updated>
       <workItem from="1497537637184" duration="20414000" />
-      <workItem from="1497805376527" duration="38752000" />
+      <workItem from="1497805376527" duration="40295000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="59166000" />
+    <option name="totallyTimeSpent" value="60709000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
@@ -544,28 +574,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/directives/gallery-live-partial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/gallery-partial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-27">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/directives/gallery-studio-partial.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
@@ -656,14 +665,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="186">
-          <caret line="446" column="7" lean-forward="false" selection-start-line="446" selection-start-column="1" selection-end-line="446" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/contact-partial.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="339">
@@ -686,6 +687,46 @@
             <element signature="e#4429#4665#0" expanded="false" />
             <element signature="e#4734#5050#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/gallery_main.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="254">
+          <caret line="450" column="18" lean-forward="false" selection-start-line="450" selection-start-column="18" selection-end-line="450" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="51">
+          <caret line="3" column="163" lean-forward="false" selection-start-line="3" selection-start-column="163" selection-end-line="3" selection-end-column="163" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/directives/gallery-studio-partial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="9" lean-forward="false" selection-start-line="5" selection-start-column="9" selection-end-line="5" selection-end-column="9" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/directives/gallery-live-partial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="68">
+          <caret line="4" column="114" lean-forward="false" selection-start-line="4" selection-start-column="114" selection-end-line="4" selection-end-column="114" />
+          <folding />
         </state>
       </provider>
     </entry>

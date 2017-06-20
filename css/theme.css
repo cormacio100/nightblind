@@ -447,6 +447,9 @@ header p{
 .nb_red{
 	color: #f10000;
 }
+.nb_white{
+	color: #ffffff;
+}
 .loading_spinner{
 	font-size:70px;
 	margin:1em;
