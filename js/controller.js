@@ -4,6 +4,7 @@
 // Parameters
 //	-	$scope - default
 //	-	$location - used for routing
+//	-	PricesAndAvailabilityFactory - used for retrieving stored data
 //  -   using this example I am setting variables globally
 //  	- 	https://jsfiddle.net/brettdewoody/y65G5/
 
@@ -131,11 +132,10 @@ SectionControllers.controller('GalleryController',function($scope,$location){
 
 //	Controller for the Contact section
 SectionControllers.controller('ContactController',function($scope,$location,PricesAndAvailabilityFactory){
-
     /**
-	 Steps in the BOOKING process:
+	 STEPS IN THE BOOKING PROCESS:
 	 STEP 1
-	 -	When page loads
+	 -	When page loads hide DOM element e.g.
 		-	hide "quote_string"
 		-	hide action_buttons
 	 	-	show "contact-info"
@@ -162,10 +162,9 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
 		-	If date is UNAVAILABLE
 			-	Toggle or SlideUp the "quote_string" to show
      */
-
     // STEP 1 - INITIALLY HIDE RELEVANT DOM ELEMENTS TO RESTART THE BOOKING PROCESS
     var step1 = function(){
-            console.log('STEP 1');
+            //	console.log('STEP 1');
             //	Hide Form
             //	Hide Spinner
             //	Hide quote with string and buttons
@@ -177,84 +176,53 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
             $('#quote_action_buttons').hide();
             $('#booked').hide();
         };
-
     //	STEP 2 - REMOVE THE CONTACT MESSAGE AND DISPLAY THE CONTACT FORM
     var step2 = function(visibility){
-            console.log('STEP 2');
+            //	console.log('STEP 2');
             if('visible'==visibility){
-                console.log('form WAS visible');
                 $('#contact_info').slideToggle('slow');
             }else if('invisible'==visibility){
-                console.log('form WAS NOT visible');
                 $('#contact_info').slideUp('slow');
                 clearForm();
             }
             $('#contact_quote_form').slideToggle('slow');
         };
-
     //	STEP 3 - REPLACE THE FORM WITH A LOADING/SEARCHING SPINNER
     var step3 = function(){
-            console.log('STEP 3');
+            //	console.log('STEP 3');
             $('#contact_quote_form').slideToggle('slow');	//	hide
             $('#spinning').slideToggle('slow');				//	show
         };
-
-    //	STEP 4 REMOVES THE SPINNER AND DISPLAYS THE QUOTE AND ACTION BUTTONS DEPENDING ON AVAILABILITY
+    //	STEP 4 - REMOVES THE SPINNER AND DISPLAYS THE QUOTE AND ACTION BUTTONS DEPENDING ON AVAILABILITY
     var step4 = function(dateFree,availability){
-    	console.log('STEP 4');
-        if($('#quote').is(':visible')){
-            console.log(('quote section was already visible'));
-        }else{
-            console.log(('quote section was NOT already visible'));
-        }
-        if($('#confirmation').is(':visible')){
-            console.log(('confirmation section was already visible'));
-        }else{
-            console.log(('confirmation section was NOT already visible'));
-        }
-        if($('#quote_string').is(':visible')){
-            console.log(('quote_string section was already visible'));
-        }else{
-            console.log(('quote_string section was NOT already visible'));
-        }
-
+    	//	console.log('STEP 4');
         //	remove the spinner
         $('#spinning').slideToggle('slow');
         //	Display availability
         $('#quote_string').html(availability);
 
-
-
-
         if(dateFree){
         	//	If the band is AVAILABLE on that date
 			//	Display the message
 			//	Display the action buttons
-            //$('#confirmation').show();
             $('#quote_string').show();
             $('#quote_action_buttons').show();
         }else{
             //	If the band is NOT AVAILABLE on that date
             //	Display the message
             //	DO NOT display the action buttons
-            //$('#confirmation').show();
             $('#quote_string').show();
             $('#quote_action_buttons').hide();
         }
         //	DISPLAY THE DIV THAT CONTAINS BOTH THE QUOTE_STRING AND THE BUTTONS
         $('#quote').slideToggle('slow');	//	show
 	};
-
-    //	STEP 5	-	REMOVES QUOTE AND EITHER CONFIRM BOOKING OF PUT BACK CONTACT STATEMENT , DEPENDING ON BUTTON CLICKED
+    //	STEP 5	-  REMOVES QUOTE AND EITHER CONFIRM BOOKING OF PUT BACK CONTACT STATEMENT , DEPENDING ON BUTTON CLICKED
     var step5 = function(buttonClicked,success){
-    	console.log('STEP 5');
+    	//	console.log('STEP 5');
         if('confirm'==buttonClicked){
             if(success){
-            	//if($('#quote').is(':visible')){
-            	///	console.log('hiding quote')
-                    $('#quote').slideUp('slow');			//	hide
-				//}
-
+                $('#quote').slideUp('slow');			//	hide
                 $('#booking_confirmed').html('The gig has been <span class="nb_red">CONFIRMED</span>');
                 $('#booked').slideDown('slow');			//	show
             }
@@ -263,7 +231,6 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
             $('#contact_info').slideDown('slow');			//	show
         }
     }
-
     //	On each click of the EMAIL button the form should be cleared
     var clearForm = function(){
         $('#contact_quote_form').find("input[type=text],input[type=email],input[type=date],select, textarea").val("");
@@ -271,7 +238,6 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
 
     //	set delay for 2 seconds to show that the app is searching
     var wait = function(requestedDate,setLength,dateFree){
-
         var datesBookedArr= [];
         datesBookedArr = PricesAndAvailabilityFactory.getDatesBooked();
         $.each(datesBookedArr,function(index,value){
@@ -281,15 +247,12 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
                 dateFree = false;
             }
         });
-        //console.log('dateFree:'+dateFree);
-
         Date.locale = {
             en: {
                 month_names: ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September', 'October', 'November', 'December'],
                 month_names_short: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
             }
         };
-
         var priceListArr= [];
         priceListArr = PricesAndAvailabilityFactory.getPriceList();
         var availability = '';
@@ -298,7 +261,6 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
         var year = requestedDate.getFullYear();
         var dayOfWeek = weekday[requestedDate.getDay()];
         var dateString = dayOfWeek+' '+day+'-'+month+'-'+year;
-        //console.log('day of week:'+dayOfWeek);
         if(dateFree){
             $.each(priceListArr,function(index,value){
                 //	Compare the day of week and set length to the pricelist
@@ -317,38 +279,11 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
         }else{
             availability = 'You have requested the band to play on <br><span class="nb_red">'+dateString+'</span>. <br>Unfortunately, the band is <span class="nb_red"><strong>NOT AVAILABLE</strong></span> on that date.'
 		}
-		//console.log('availability is:'+availability);
-
 		step4(dateFree,availability);
-
-		//	remove the spinner
-		//$('#spinning').slideToggle('slow');
-		//	Display availability
-		//$('#quote_string').html(availability);
-        /*if(dateFree){
-        	//console.log('the band is free on that date');
-            $('#confirmation').show();
-            $('#quote_string').show();
-        	$('#quote_action_buttons').show();
-		}else{
-            $('#confirmation').show();
-            $('#quote_action_buttons').hide();
-		}*/
-		if($('#quote').is(':visible')){
-			//console.log(('quote section was already visible'));
-            if($('#confirmation').is(':visible')){
-                console.log(('confirmation section was already visible'));
-			}
-		}else{
-            console.log(('quote section was NOT already visible'));
-		}
-		//	add the quote
-		//$('#quote').slideToggle('slow');	//	show
     };
 
     //	THIS IS THE ACTION FOR THE FORM AND ALSO THE ACTION FOR THE BUTTONS
 	$scope.contactQuote = function(){
-        //$scope.enquiry = {};
         var name = '';
         var email = '';
         var requestedDate = null;
@@ -365,58 +300,32 @@ SectionControllers.controller('ContactController',function($scope,$location,Pric
             specialRequirements = $scope.specialRequirements;
 		}
 		step3();
-
 		//	Wait 2 seconds before showing result
         setTimeout(function(){wait(requestedDate,setLength,dateFree)},2000);
-
-
         /**
 		 * STEP 5
          */
         //	When the potential booking is displayed to the user they can choose to confirm or cancel the booking
         $('#confirm_booking').on('click',function(){
-        	//console.log('confirm');
             var success = PricesAndAvailabilityFactory.setBooking(dateString,specialRequirements);
             step5('confirm',success);
-            /*if(success){
-            	//console.log('success');
-                // then confirm what's in the array now
-				//var bookings = PricesAndAvailabilityFactory.getDatesBooked();
-				//$.each(bookings,function(index,value){
-				//	console.log('date:'+value.date+' S.R.:'+value.specialRequirements);
-				//});
-                $('#confirmation').slideToggle('slow');		//	hide
-                $('#confirmed').html('The gig has been <span class="nb_red">CONFIRMED</span>');
-                $('#booked').slideToggle('slow');			//	show
-
-
-			}*/
 		});
         $('#cancel_booking_request').on('click',function(){
-            //$('#confirmation').slideToggle('slow');			//	hide
-            //$('#contact_info').slideToggle('slow');			//	show
             step5('cancel',null);
 		});
     };
-
+	//	MUST HIDE DOM ELEMENTS ON PAGE LOAD
     step1();
-
     $('#email-request').on('click',function(){
         // REPEAT STEP 1 ANY TIME THE BUTTON IS CLICKED
         step1();
-
 		//	Is the form being displayed at the time of clicking?
 		//	If it is we want to clear the form and also remove the contact-info
         if($('#contact_quote_form').is(':visible')){
-
 			step2('visible');
-            //$('#contact-info').slideToggle('slow');
 		}else{
             step2('invisible');
-            //console.log('form is NOT visible');
-            //$('#contact-info').slideUp('slow');
             clearForm();
 		}
-        //$('#contact_quote_form').slideToggle('slow');
 	});
 });
