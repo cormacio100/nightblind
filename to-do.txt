@@ -1,3 +1,11 @@
+
+CHECK Bootstrap flexibility for responsiveness
+
+ADD IMAGES TO THE MEMBER SECTION
+
+Document testing
+
+-----------------------------------------------------------------------------------
 When a date is booked through the site - it saves to the bookedDates array. However, if you try to rebook on the same date the "unavailable" date does not appear
 	
 Need to divide into 
@@ -34,17 +42,10 @@ STEP 3
 				-	Toggle "contact-info" to show
 		-	If date is UNAVAILABLE
 			-	Toggle or SlideUp the "quote_string" to show
-			-	hide the action buttons
+			-	hide the action buttons	
      */
-		
-	
-Add Bootstrap flexibility for responsiveness
 
-Something is up when you click Studio Images. When linking back from GALLERY PAGE IT LINKS TO THE MEMBER SECTION INSTEAD OF THE GALLERY SECTION. 
-	
-Document testing
 
------------------------------------------------------------------------------------
 On Gallery Put an indicattor beside the updown arrows to inidcate what they are - done
 
 Build contact form (with validation that is initially hidden:

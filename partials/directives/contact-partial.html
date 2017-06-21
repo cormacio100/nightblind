@@ -1,49 +1,53 @@
 <section id="contact">
 	<div class="container" ng-controller="ContactController">
 		<div class="row">
-			<div class="col-lg-8 col-lg-offset-2 text-center" >
+			<!--<div clas="col-lg-1 hidden-md">&nbsp;</div>-->
+			<div class="col-xs-12 text-center" >
 				<h2 class="section-heading">Contact The Band</h2>
 				<hr class="primary">
 				<p id="contact_info">Want to book us for a show? Give us a call or send us an email and we will get back to you as soon as possible!</p>
 				<form name="contact_quote_form" id="contact_quote_form" ng-submit="contactQuote()">
 					<div class="row">
-						<div class="col-md-2 text-right" >
+						<div class="hidden-xs col-sm-1" >&nbsp;</div>
+						<div class="col-xs-2 col-sm-2 text-center" >
 							Name:
-							</div>
-						<div class="col-md-4 text-left" >
-							<input type="text" id="name" name="name" class="contact_form_element" ng-model="name" required>
+						</div>
+						<div class="col-xs-10 col-sm-3 text-left" >
+							<input type="text" id="name" name="name" class="contact_form_element resized_textbox" ng-model="name" required>
 							<br>
 							<span class="form_error" ng-show="contact_quote_form.name.$dirty && contact_quote_form.name.$invalid">
 								<span ng-show="contact_quote_form.name.$error.required">name is required.</span>
 							</span>
 						</div>
-						<div class="col-md-2 text-right" >
+						<div class="col-xs-2 col-sm-2 text-center" >
 							Email:
 						</div>
-						<div class="col-md-4 text-left" >
-							<input type="email" id="email" name="email" class="contact_form_element" ng-model="email" required>
+						<div class="col-xs-10 col-sm-3 text-left" >
+							<input type="email" id="email" name="email" class="contact_form_element resized_textbox" ng-model="email" required>
 							<br>
 							<span class="form_error" ng-show="contact_quote_form.email.$error.email">
 								A valid email is required.
 							</span>
 						</div>
+						<div class="hidden-xs col-sm-1 text-left" >&nbsp;</div>
 					</div>
 					<div class="row">
-						<div class="col-md-2 text-right" >
+						<div class="hidden-xs col-sm-1" >&nbsp;</div>
+						<div class="col-xs-2 col-sm-2 text-center" >
 							Gig Date:
 						</div>
-						<div class="col-md-4 text-left" >
-							<input type="date" id="date" name="date" class="contact_form_element" ng-model="requestedDate" required>
+						<div class="col-xs-10 col-sm-3 text-left" >
+							<input type="date" id="date" name="date" class="contact_form_element resized_textbox" ng-model="requestedDate" required>
 							<br>
 							<span class="form_error" ng-show="contact_quote_form.date.$dirty && contact_quote_form.date.$invalid">
 								<span ng-show="contact_quote_form.date.$error.required">Enter a valid date</span>
 							</span>
 						</div>
-						<div class="col-md-2 text-right" >
+						<div class="col-xs-2 col-sm-2 text-center" >
 							Set Length:
 						</div>
-						<div class="col-md-4 text-left" >
-							<select name="set_length" class="contact_form_element" ng-model="setLength" required>
+						<div class="col-xs-10 col-sm-3 text-left" >
+							<select name="set_length" class="contact_form_element resized_textbox" ng-model="setLength" required>
 								<option value=1>1 hour</option>
 								<option value=2>2 hours</option>
 								<option value=3>3 hours</option>
@@ -52,13 +56,15 @@
 								<span ng-show="contact_quote_form.event_type.$error.required">Choose a set length</span>
 							</span>
 						</div>
+						<div class="hidden-xs col-sm-1 text-left" >&nbsp;</div>
 					</div>
 					<div class="row">
-						<div class="col-md-2 text-right" >
+						<div class="hidden-xs col-sm-1" >&nbsp;</div>
+						<div class="col-xs-2 col-sm-2 text-center" >
 							Special Requirements
 						</div>
-						<div class="col-md-10 text-left" >
-							<textarea rows="4" cols="70" class="contact_form_element" ng-model="specialRequirements"></textarea>
+						<div class="col-xs-9 text-left" >
+							<textarea rows="4" class="contact_form_element resized_textbox" ng-model="specialRequirements"></textarea>
 						</div>
 					</div>
 					<div class="row">
@@ -91,6 +97,7 @@
 					<div class="col-md-12 text-center" id="booking_confirmed"></div>
 				</div>
 			</div>
+			<!--<div clas="col-lg-1 hidden-md">&nbsp;</div>-->
 		</div>
 		<div class="row" id="contactsRow">
 			<div class="col-lg-3  text-center">

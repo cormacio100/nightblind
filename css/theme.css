@@ -209,6 +209,7 @@ header p{
 	opacity:0.9;
 	border-radius: 25px;
 	padding:1em;
+	margin:0.5em;
 }
 
 #member_details{
@@ -468,4 +469,7 @@ header p{
 #quote_string,
 #quote_action_buttons{
 	text-align:center;
+}
+.resized_textbox{
+	width: 90%;
 }
