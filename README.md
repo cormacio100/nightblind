@@ -18,7 +18,8 @@ This app will allow users to:
 
 ### How Does it work
 
-Currently, this is a fully client-side application where factory is used to retrieve hard-coded data about band members
+Currently, this is a fully client-side application where a factory is used to retrieve hard-coded data about band members.
+A factory is also used to allow users check for available dates to book the band. Once an available date is found the user can confirm the booking
 
 ## Features
 
@@ -35,11 +36,9 @@ Currently, this is a fully client-side application where factory is used to retr
 
 ## Tech Used
 - [AngularJS](http://angularjs.org/)
-	- We use **AngularJS** to handle page routing, we also use it to make calls to the REST API and build custom directives
+	- I used **AngularJS** to handle page routing. I also use it to retrieve hardcoded data using a FACTORY and build custom directives
 - [Bootstrap](http://getbootstrap.com/)
 	- We use **Bootstrap** to give our project a simple responsive layout
-- [npm](https://www.npmjs.com/)
-	- We use **nm** to help manage some of the dependencies in our application
 - [bower](https://bower.io/)
 	- **Bower** is used to manage the installation of our libraries and frameworks
 
@@ -60,4 +59,4 @@ Currently, this is a fully client-side application where factory is used to retr
 
 4. After those dependencies have been installed you'll need to make sure that you have **http-server** installed. You can install this by running the following: ```npm install -g http-server # this also may require sudo on Mac/Linux```
 5. Once **http-server** is installed run ```http-server```
-6. The project will now run on [localhost](http://127.0.0.1:8080)
+6. The project will now run on [localhost:8080](http://127.0.0.1:8080)

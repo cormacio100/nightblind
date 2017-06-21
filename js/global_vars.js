@@ -54,27 +54,31 @@ var members = [
     {id:"cormac",shortname:"Cormac_Liston",
         name: "Cormac Liston",
         instrument: "Guitar / Vocals",
-        gear: "Fender Blacktop Strat HH, Vox AC30 VR"
+        gear: "Fender Blacktop Strat HH, Vox AC30 VR",
+        img: "img/members/cormac_small.png"
     },
     {
         id:"hugh",
         shortname:"Hugh_OConnor",
         name: "Hugh O'Connor",
         instrument: "Guitar / Vocals",
-        gear: "Fender Strat, Vox AC30 VR"
+        gear: "Fender Strat, Vox AC30 VR",
+        img: "img/members/hugh_small.png"
     },
     {
         id:"davy",
         shortname:"Davy_Dwyer",
         name: "Davy Dwyer",
         instrument: "Drums",
-        gear: "Peavy, Paiste Cymbols, Tama Drums"
+        gear: "Peavy, Paiste Cymbols, Tama Drums",
+        img: "img/members/davy_small.png"
     },
     {
         id:"freek",
         shortname:"Freek_Vermeer",
         name: "Freek Vermeer",
         instrument: "Bass",
-        gear: "Fender Jazz Bass, Trace Elliot GP12"
+        gear: "Fender Jazz Bass, Trace Elliot GP12",
+        img: "img/members/freek_small.png"
     }
 ];

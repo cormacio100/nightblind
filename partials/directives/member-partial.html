@@ -47,12 +47,15 @@
 		</div>
 		<div class="row" ng-controller="MemberController" >
 			<div data-ng-repeat="member in memberArr" id="{{member.id}}_details" class="col-xs-12 collapse">
-				<div>
-					<p>
+				<div class="row">
+					<div class="col-xs-7">
 						<h2>Name: {{ member.name }}</h2>
 						<h3>Instrument: {{ member.instrument}}</h3>
 						<h3>Gear: {{ member.gear}}</h3>
-					</p>
+					</div>
+					<div class="col-xs-5">
+						<img src="{{ member.img }}" alt band="band member" class="member_pic">
+					</div>
 				</div>
 			</div>
 		</div>

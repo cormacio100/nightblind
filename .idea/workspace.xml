@@ -2,14 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="43813dd5-9e15-46e0-a596-491292d6a895" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.md" afterPath="$PROJECT_DIR$/README.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/css/theme.css" afterPath="$PROJECT_DIR$/css/theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/contact-partial.html" afterPath="$PROJECT_DIR$/partials/directives/contact-partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/gallery-partial.html" afterPath="$PROJECT_DIR$/partials/directives/gallery-partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/gallery-studio-partial.html" afterPath="$PROJECT_DIR$/partials/directives/gallery-studio-partial.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/js/global_vars.js" afterPath="$PROJECT_DIR$/js/global_vars.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/member-partial.html" afterPath="$PROJECT_DIR$/partials/directives/member-partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/music-partial.html" afterPath="$PROJECT_DIR$/partials/directives/music-partial.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/partials/directives/video-partial.html" afterPath="$PROJECT_DIR$/partials/directives/video-partial.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/to-do.txt" afterPath="$PROJECT_DIR$/to-do.txt" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -25,11 +21,21 @@
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="theme.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/css/theme.css">
+      <file leaf-file-name="member-partial.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/partials/directives/member-partial.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="427">
-              <caret line="472" column="1" lean-forward="false" selection-start-line="472" selection-start-column="1" selection-end-line="472" selection-end-column="16" />
+              <caret line="56" column="92" lean-forward="false" selection-start-line="56" selection-start-column="82" selection-end-line="56" selection-end-column="92" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="theme.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/css/theme.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="512">
+              <caret line="477" column="15" lean-forward="false" selection-start-line="477" selection-start-column="15" selection-end-line="477" selection-end-column="15" />
               <folding />
             </state>
           </provider>
@@ -39,7 +45,7 @@
         <entry file="file://$PROJECT_DIR$/js/controller.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="374">
-              <caret line="133" column="42" lean-forward="true" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
+              <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
               <folding>
                 <element signature="e#484#503#0" expanded="false" />
                 <element signature="e#661#687#0" expanded="false" />
@@ -59,8 +65,8 @@
       <file leaf-file-name="global_vars.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/js/global_vars.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="235">
-              <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="42" />
+            <state relative-caret-position="555">
+              <caret line="81" column="37" lean-forward="false" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
               <folding>
                 <element signature="e#1038#2124#0" expanded="false" />
               </folding>
@@ -78,7 +84,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="contact-partial.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="contact-partial.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/partials/directives/contact-partial.html">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="502">
@@ -101,6 +107,16 @@
                 <element signature="e#3607#3613#1" expanded="true" />
                 <element signature="e#4080#4086#1" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="README.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/README.md">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="446">
+              <caret line="61" column="46" lean-forward="false" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -136,9 +152,9 @@
       <find>#quote</find>
       <find>contact-info</find>
       <find>confirmation</find>
-      <find>#confirmed</find>
       <find>col-</find>
       <find>thumb</find>
+      <find>#confirmed</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -148,22 +164,22 @@
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/js/app.js" />
-        <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/partials/directives/home-partial.html" />
         <option value="$PROJECT_DIR$/js/custom.js" />
         <option value="$PROJECT_DIR$/index.html" />
         <option value="$PROJECT_DIR$/js/factory.js" />
-        <option value="$PROJECT_DIR$/js/global_vars.js" />
         <option value="$PROJECT_DIR$/partials/directives/gallery-artwork-partial.html" />
         <option value="$PROJECT_DIR$/partials/directives/gallery-live-partial.html" />
         <option value="$PROJECT_DIR$/js/controller.js" />
-        <option value="$PROJECT_DIR$/partials/directives/member-partial.html" />
         <option value="$PROJECT_DIR$/partials/directives/gallery-partial.html" />
         <option value="$PROJECT_DIR$/partials/directives/gallery-studio-partial.html" />
         <option value="$PROJECT_DIR$/partials/directives/music-partial.html" />
         <option value="$PROJECT_DIR$/partials/directives/video-partial.html" />
-        <option value="$PROJECT_DIR$/css/theme.css" />
         <option value="$PROJECT_DIR$/partials/directives/contact-partial.html" />
+        <option value="$PROJECT_DIR$/README.md" />
+        <option value="$PROJECT_DIR$/partials/directives/member-partial.html" />
+        <option value="$PROJECT_DIR$/js/global_vars.js" />
+        <option value="$PROJECT_DIR$/css/theme.css" />
       </list>
     </option>
   </component>
@@ -239,20 +255,6 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="directives" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nightblind" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="nightblind" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -370,18 +372,18 @@
       <option name="presentableId" value="Default" />
       <updated>1497537632187</updated>
       <workItem from="1497537637184" duration="20414000" />
-      <workItem from="1497805376527" duration="58977000" />
+      <workItem from="1497805376527" duration="62475000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="79391000" />
+    <option name="totallyTimeSpent" value="82889000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20058565" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23133236" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
@@ -555,13 +557,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/README.md">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="663">
-          <caret line="39" column="73" lean-forward="true" selection-start-line="39" selection-start-column="73" selection-end-line="39" selection-end-column="73" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/about-partial.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -627,33 +622,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/js/controller.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
-          <caret line="133" column="42" lean-forward="true" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
-          <folding>
-            <element signature="e#484#503#0" expanded="false" />
-            <element signature="e#661#687#0" expanded="false" />
-            <element signature="e#827#3728#0" expanded="false" />
-            <element signature="e#3838#4067#0" expanded="false" />
-            <element signature="e#4214#12415#0" expanded="false" />
-            <element signature="e#8160#8286#0" expanded="false" />
-            <element signature="e#8829#9145#0" expanded="false" />
-            <element signature="e#9584#10494#0" expanded="false" />
-            <element signature="e#10872#11959#0" expanded="false" />
-            <element signature="e#11116#11379#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/partials/directives/member-partial.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="629">
-          <caret line="48" column="98" lean-forward="false" selection-start-line="48" selection-start-column="98" selection-end-line="48" selection-end-column="98" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/gallery-studio-partial.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
@@ -675,16 +643,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="60" lean-forward="false" selection-start-line="0" selection-start-column="60" selection-end-line="0" selection-end-column="60" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/js/global_vars.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="235">
-          <caret line="22" column="42" lean-forward="false" selection-start-line="22" selection-start-column="23" selection-end-line="22" selection-end-column="42" />
-          <folding>
-            <element signature="e#1038#2124#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -727,14 +685,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/css/theme.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="427">
-          <caret line="472" column="1" lean-forward="false" selection-start-line="472" selection-start-column="1" selection-end-line="472" selection-end-column="16" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/partials/directives/contact-partial.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="502">
@@ -757,6 +707,59 @@
             <element signature="e#3607#3613#1" expanded="true" />
             <element signature="e#4080#4086#1" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/README.md">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="446">
+          <caret line="61" column="46" lean-forward="false" selection-start-line="61" selection-start-column="46" selection-end-line="61" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/global_vars.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="555">
+          <caret line="81" column="37" lean-forward="false" selection-start-line="81" selection-start-column="37" selection-end-line="81" selection-end-column="37" />
+          <folding>
+            <element signature="e#1038#2124#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/js/controller.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="374">
+          <caret line="133" column="42" lean-forward="false" selection-start-line="133" selection-start-column="42" selection-end-line="133" selection-end-column="42" />
+          <folding>
+            <element signature="e#484#503#0" expanded="false" />
+            <element signature="e#661#687#0" expanded="false" />
+            <element signature="e#827#3728#0" expanded="false" />
+            <element signature="e#3838#4067#0" expanded="false" />
+            <element signature="e#4214#12415#0" expanded="false" />
+            <element signature="e#8160#8286#0" expanded="false" />
+            <element signature="e#8829#9145#0" expanded="false" />
+            <element signature="e#9584#10494#0" expanded="false" />
+            <element signature="e#10872#11959#0" expanded="false" />
+            <element signature="e#11116#11379#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/partials/directives/member-partial.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="427">
+          <caret line="56" column="92" lean-forward="false" selection-start-line="56" selection-start-column="82" selection-end-line="56" selection-end-column="92" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/css/theme.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="512">
+          <caret line="477" column="15" lean-forward="false" selection-start-line="477" selection-start-column="15" selection-end-line="477" selection-end-column="15" />
+          <folding />
         </state>
       </provider>
     </entry>

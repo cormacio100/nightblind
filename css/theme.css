@@ -473,3 +473,7 @@ header p{
 .resized_textbox{
 	width: 90%;
 }
+.member_pic{
+	border:1px solid #f10000;
+	margin:1em;
+}

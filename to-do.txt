@@ -1,11 +1,15 @@
-
-CHECK Bootstrap flexibility for responsiveness
-
 ADD IMAGES TO THE MEMBER SECTION
 
 Document testing
 
 -----------------------------------------------------------------------------------
+CHECK Bootstrap flexibility for responsiveness
+
+XS 	< 	768
+SM 	>=	768
+MD 	>= 	992
+LG	>=	1200
+
 When a date is booked through the site - it saves to the bookedDates array. However, if you try to rebook on the same date the "unavailable" date does not appear
 	
 Need to divide into 
