@@ -62,5 +62,5 @@ A factory is also used to allow users check for available dates to book the band
 6. The project will now run on [localhost:8080](http://127.0.0.1:8080)
 
 
-### How Does it work
+### To Note
 The live site (link shown above) is run from the gh-pages branch
