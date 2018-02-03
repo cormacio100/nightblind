@@ -18,7 +18,7 @@ This app will allow users to:
 
 ### How Does it work
 
-Currently, this is a fully client-side application where a factory is used to retrieve hard-coded data about band members.
+Currently, this is a fully client-side application where a factory is used to retrieve hard-coded data about band members. However, a Django app hosted on Heroku is launched initially to forward the user to this client-side app. The idea is for the DJango app to be used as an API in the future
 A factory is also used to allow users check for available dates to book the band. Once an available date is found the user can confirm the booking
 
 ## Features
