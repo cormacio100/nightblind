@@ -78,7 +78,7 @@ var members = [
         shortname:"Freek_Vermeer",
         name: "Nick Peris",
         instrument: "Bass",
-        gear: "Rickenbacker Bass, Trace Elliot",
+        gear: "Rickenbacker Bass, Trace Elliot ",
         img: "img/members/freek_small.png"
     }
 ];
