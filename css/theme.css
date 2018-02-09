@@ -393,7 +393,9 @@ header p{
 	min-height:100%;
 	font-size:14px;
 }
-
+.height315{
+	height:315px;
+}
 /*******************/
 /* CONTACT SECTION */
 /*******************/
