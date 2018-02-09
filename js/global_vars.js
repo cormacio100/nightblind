@@ -70,7 +70,7 @@ var members = [
         shortname:"Davy_Dwyer",
         name: "Davy Dwyer",
         instrument: "Drums",
-        gear: "Peavy, Paiste Cymbols, Tama Drums",
+        gear: "Paiste Cymbals, Tama Drums",
         img: "img/members/davy_small.png"
     },
     {
