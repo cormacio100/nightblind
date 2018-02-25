@@ -22,6 +22,10 @@ SectionControllers.controller('NavController',['$scope','$http',function($scope,
 SectionControllers.controller('MemberController',function($scope,$http,MemberFactory){
 	var memberArr= [];
 	memberArr = MemberFactory.getMembers();
+
+    console.log('memberArr is ');
+    console.log(memberArr);
+
 	//	all band members data loaded. They will initially be hidden
 	$scope.memberArr = memberArr;
 
