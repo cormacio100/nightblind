@@ -18,13 +18,23 @@ SectionControllers.factory('MemberFactory',function($http){
                 console.log('Member 3 instrument is ');
                 console.log(data[2].instrument);
 
-                return data;
+                //return data;
 
 
                 membersArr = []
-                data.forEach(function(element) { 
-                    membersArr.push(element[1]);
+                //data.forEach(function(element) { 
+                  //  membersArr.push(element[1]);
+                //});
+                $.each(data,function(index,value){
+                    membersArr.push(value);
                 });
+
+                console.log('Printing out MembersArr');
+                for(var i=0; i<membersArr.length;i++){
+                    console.log(membersArr[i]);
+                }
+
+
                 return membersArr;
 
                 //var membersArr = [];
