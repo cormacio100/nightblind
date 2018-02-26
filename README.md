@@ -64,3 +64,5 @@ A factory is also used to allow users check for available dates to book the band
 
 ### To Note
 The live site (link shown above) is run from the gh-pages branch
+The live site can also be launched from the link https://nightblind.herokuapp.com. 
+Repo for this is at https://github.com/cormacio100/nightblind_forwarding
